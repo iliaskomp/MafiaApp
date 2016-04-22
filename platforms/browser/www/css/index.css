@@ -17,14 +17,14 @@
  * under the License.
  */
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);  make transparent link selection, adjust last value opacity 0 to 1.0
 }
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
+/*    background-color:#E4E4E4;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -35,19 +35,19 @@ body {
         color-stop(0, #A7A7A7),
         color-stop(0.51, #E4E4E4)
     );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    background-attachment:fixed;*/
+    /*font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;*/
+    /*font-size:12px;*/
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
+    /*text-transform:uppercase;*/
     width:100%;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    /*background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */*/
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
@@ -63,13 +63,13 @@ body {
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height
         margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
 }
 
-h1 {
+/*h1 {
     font-size:24px;
     font-weight:normal;
     margin:0px;
@@ -113,19 +113,33 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-
+*/
 
 /*/////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////*/
 
+* {
+        font-family: 'Roboto Condensed', sans-serif;
 
+}
 .title {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Passion One', cursive;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 64px;
 }
 
-.home-button {
-    display: block;
+.home-buttons {
+    margin: 0 auto;
+    width:200px;
+
+}
+.home-buttons a {
+    position:relative;
+    display:block;
+    text-decoration: none;
+    margin-bottom: 30px;
 
 }
