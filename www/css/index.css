@@ -120,17 +120,6 @@ body {
 /*/////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////*/
 
-* {
-        font-family: 'Roboto Condensed', sans-serif;
-
-}
-.title {
-    font-family: 'Passion One', cursive;
-    text-align: center;
-    margin: 20px 0;
-    font-size: 64px;
-}
-
 .home-buttons {
     margin: 0 auto;
     width:200px;
