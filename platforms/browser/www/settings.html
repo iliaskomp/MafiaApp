@@ -42,22 +42,27 @@
     </head>
 <body>
 
-    <h1>Game Settings</h1>
+    <h1 class="title">Settings</h1>
 
-    <label for="slider-1">Mafia:</label>
-    <input type="range" name="slider-1" id="slider-1" value="2" min="0" max="6">
+    <div id="sliders">
+        <label for="slider-1">Mafia:</label>
+        <input type="range" name="slider-1" id="slider-1" value="2" min="0" max="6">
 
-    <label for="slider-1">Doctors</label>
-    <input type="range" name="slider-1" id="slider-1" value="1" min="0" max="6">
+        <label for="slider-1">Doctors</label>
+        <input type="range" name="slider-1" id="slider-1" value="1" min="0" max="6">
 
-    <label for="slider-1">Dective:</label>
-    <input type="range" name="slider-1" id="slider-1" value="1" min="0" max="6">
+        <label for="slider-1">Detective:</label>
+        <input type="range" name="slider-1" id="slider-1" value="1" min="0" max="6">
 
-    <label for="slider-1">Time(minutes):</label>
-    <input type="range" name="slider-1" id="slider-1" value="5" min="1" max="200">
+        <label for="slider-1">Time(minutes):</label>
+        <input type="range" name="slider-1" id="slider-1" value="5" min="1" max="200">
+    </div>
 
-    <a class="btn btn-primary home-button general" href="createGame.html" role="button">Back</a>
-    <a class="btn btn-success home-button general" href="#" role="button">Start</a>
+    <div class="two-buttons">
+       <a class="btn btn-primary home-button general" href="createGame.html" role="button">Back</a>
+       <a class="btn btn-success home-button general" href="waiting.html" role="button">Start</a>
+    </div>
+
 
     <!--Cordova-->
     <!--<script type="text/javascript" src="cordova.js"></script>-->
