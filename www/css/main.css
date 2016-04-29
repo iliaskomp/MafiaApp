@@ -5,11 +5,17 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-body {
+/*body {
     padding: 100px 100px 100px 100px;
     margin: 100px 100px 100px 100px;
+}*/
 
+.form-general {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width:80%;
 }
+
 /* Title */
 .title {
     text-align: center;
@@ -81,12 +87,6 @@ body {
     width: 80px;
 }
 
-
-.create-game-form {
-    margin: 0 auto;
-    margin-bottom: 50px;
-    width:80%;
-}
 #settings-icon {
     margin:0 auto;
     width:100%;
@@ -106,4 +106,39 @@ body {
 #sliders {
     width: 80%;
     margin: 0 auto;
+}
+
+/* Join Room */
+
+.room-list {
+    text-decoration: none;
+    list-style: none;
+}
+
+.room-list li {
+    margin-bottom: 20px
+}
+
+
+.room-list li a {
+        color: blue;
+    text-decoration: none;
+}
+
+.ui-link {
+    color:red; !important
+}
+
+/* Pregame*/
+
+.role-image {
+    margin: 20px auto;
+    width: 100%;
+}
+
+.role-image img{
+    position:relative;
+    display:block;
+    margin: 0 auto;
+    text-align: center;
 }
