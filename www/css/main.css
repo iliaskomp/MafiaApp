@@ -10,8 +10,27 @@
     text-align: center;
     /*margin: 200px 0;*/
     font-size: 64px;
+    font-family: 'Passion One'
 }
 
 .general{
     text-align: center;
+}
+
+/*Altering Jquery Mobile defaults */
+.ui-page-theme-a a {
+    color: white; !important
+}
+
+.ui-page-theme-a a:active {
+    color: white; !important
+}
+
+.ui-page-theme-a a:hover {
+    color: white; !important
+}
+
+
+.ui-page-theme-a a:visited {
+    color: white; !important
 }
