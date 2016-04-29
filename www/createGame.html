@@ -37,19 +37,33 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <!--General CSS-->
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    
+    <link rel="stylesheet" type="text/css" href="/css/createGame.css" />
+
+
     <title>Title</title>
-    </head>    
+    </head>
 <body>
-    
-    <h1 class="general">Create Game</h1>
-    <p class="general">Name</p>
-    <input class="general" type="text" name="name">
-    <p class="general">Password(optional)</p>
-    <input class="general" type="password" name="password">
-    <a class="btn btn-default home-button" href="settings.html" role="button">settings</a>
-    <a class="btn btn-default home-button" href="index.html" role="button">back</a>
-    
+
+    <h1 class="title general">Create Game</h1>
+
+    <div class="create-game-form">
+        <p class="general">Name</p>
+        <input class="general input-form" type="text" name="name">
+
+        <p class="general">Password (optional)</p>
+        <input class="general input-form" type="password" name="password">
+    </div>
+
+
+    <div class="create-buttons">
+        <a class="btn btn-primary" href="index.html" role="button">Back</a>
+        <a class="btn btn-success " href="index.html" role="button">Start Game</a><br>
+    </div>
+
+    <a id="settings-icon" href="settings.html" role="button">
+        <img  src="img/settings_icon.png" alt="Settings">
+    </a>
+
     <!--Cordova-->
     <!--<script type="text/javascript" src="cordova.js"></script>-->
     <!--Bootstrap JS-->

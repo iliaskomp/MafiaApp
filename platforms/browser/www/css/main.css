@@ -5,6 +5,11 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+body {
+    padding: 100px 100px 100px 100px;
+    margin: 100px 100px 100px 100px;
+
+}
 /* Title */
 .title {
     text-align: center;
@@ -20,3 +25,76 @@
     text-align: center;
 }
 
+/*Homepage*/
+
+
+#pistol {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+/*Altering Jquery Mobile defaults */
+.ui-page-theme-a a {
+    color: white; !important
+}
+
+.ui-page-theme-a a:active {
+    color: white; !important
+}
+
+.ui-page-theme-a a:hover {
+    color: white; !important
+}
+
+
+.ui-page-theme-a a:visited {
+    color: white; !important
+}
+.home-buttons {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width:80%;
+
+}
+.home-buttons a {
+    position:relative;
+    display:block;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+/*Create Game*/
+.input-form {
+    width: 80px;
+}
+
+.create-buttons {
+    margin: 0 auto;
+    width:80%;
+}
+
+.create-buttons a {
+    position:relative;
+    display:block;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.create-game-form {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width:80%;
+}
+#settings-icon {
+    margin:0 auto;
+    width:100%;
+}
+
+#settings-icon img{
+        position:relative;
+    display:block;
+    width: 40px;
+    margin: 0 auto;
+    text-align: center;
+
+}
