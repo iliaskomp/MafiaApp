@@ -20,20 +20,3 @@
     text-align: center;
 }
 
-/*Altering Jquery Mobile defaults */
-.ui-page-theme-a a {
-    color: white; !important
-}
-
-.ui-page-theme-a a:active {
-    color: white; !important
-}
-
-.ui-page-theme-a a:hover {
-    color: white; !important
-}
-
-
-.ui-page-theme-a a:visited {
-    color: white; !important
-}
