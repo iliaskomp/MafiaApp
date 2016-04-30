@@ -67,15 +67,14 @@
         <div role="main" class="ui-content">
             <div class="form-general">
                 <p class="general">Room Name</p>
-                <input class="general input-form" type="text" name="name">
+                <input id="room-name" class="general input-form" type="text" name="name">
 
                 <p class="general">Room Password (optional)</p>
-                <input class="general input-form" type="password" name="password">
+                <input id="password" class="general input-form" type="password" name="password">
 
                 <p class="general master">User Name (Only Master)</p>
-                <input class="general input-form" type="text" name="name">
+                <input id="master-name" class="general input-form" type="text" name="name">
             </div>
-
 
             <div class="two-buttons">
                 <a class="btn btn-success " href="#waiting" role="button">Start Game</a><br>
@@ -109,6 +108,8 @@
                 <label for="slider-4">Time(minutes):</label>
                 <input type="range" name="slider-4" id="slider-4" value="5" min="1" max="200">
             </div>
+
+            <a class="btn btn-success general" href="waiting.html" role="button">OK</a>
         </div>
     </div>
 
