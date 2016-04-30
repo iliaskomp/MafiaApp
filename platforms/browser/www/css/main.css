@@ -121,13 +121,12 @@
 
 
 .room-list li a {
-        color: blue;
+    color: blue; !important
     text-decoration: none;
+    background-color: gray;
+    text-shadow: none;
 }
 
-.ui-link {
-    color:red; !important
-}
 
 /* Pregame*/
 
