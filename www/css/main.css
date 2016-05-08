@@ -110,23 +110,19 @@
 
 /* Join Room */
 
-.room-list {
+/*.room-list {
     text-decoration: none;
     list-style: none;
-}
+}*/
 
-.room-list li {
+.room-list {
     margin-bottom: 20px
 }
 
 
 .room-list li a {
-        color: blue;
-    text-decoration: none;
-}
-
-.ui-link {
-    color:red; !important
+    /*color: blue !important;*/
+    /*text-decoration: none;*/
 }
 
 /* Pregame*/
