@@ -42,13 +42,194 @@
     <title>Title</title>
     </head>
 <body>
+    <!-- Homepage -->
+    <div data-role="page" id="homepage">
+        <div data-role="header">
+            <h1>Home</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <h1 class="title">Mafia</h1>
+            <img id="pistol" class="blood" src="img/pistol.png" alt="Pistol" width="100px">
 
-    <h1 class="title">Mafia</h1>
-    <img id="pistol" class="blood" src="img/pistol.png" alt="Pistol" width="100px">
-    <div class="home-buttons">
-        <a class="btn btn-success btn-lg" href="createGame.html" role="button">Create Game</a>
-        <a class="btn btn-primary btn-lg" href="joinGame.html" role="button">Join Game</a>
+            <div class="home-buttons">
+                <a class="btn btn-success btn-lg" href="#createGame" role="button">Create Game</a>
+                <a class="btn btn-primary btn-lg" href="#joinGame" role="button">Join Game</a>
+            </div>
+        </div>
     </div>
+
+    <!-- Create Game Page -->
+    <div data-role="page" id="createGame">
+        <div data-role="header">
+            <h1>Create Game</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div class="form-general">
+                <p class="general">Room Name</p>
+                <input id="room-name" class="general input-form" type="text" name="name">
+
+                <p class="general">Room Password (optional)</p>
+                <input id="password" class="general input-form" type="password" name="password">
+
+                <p class="general master">User Name (Only Master)</p>
+                <input id="master-name" class="general input-form" type="text" name="name">
+            </div>
+
+            <div class="two-buttons">
+                <a class="btn btn-success " href="#waiting" role="button">Start Game</a><br>
+                <a class="btn btn-primary" href="#homepage" role="button">Back</a>
+            </div>
+
+            <a id="settings-icon" href="#settings" role="button" data-transition="flip">
+                <img  src="img/settings_icon.png" alt="Settings">
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Settings Dialog Page -->
+    <div data-role="page" id="settings" data-dialog="true">
+        <div data-role="header">
+            <h1>Settings</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div id="sliders">
+                <label for="slider-1">Mafia:</label>
+                <input type="range" name="slider-1" id="slider-1" value="2" min="0" max="6">
+
+                <label for="slider-2">Doctors</label>
+                <input type="range" name="slider-2" id="slider-2" value="1" min="0" max="6">
+
+                <label for="slider-3">Detective:</label>
+                <input type="range" name="slider-3" id="slider-3" value="1" min="0" max="6">
+
+                <label for="slider-4">Time(minutes):</label>
+                <input type="range" name="slider-4" id="slider-4" value="5" min="1" max="200">
+            </div>
+
+            <a class="btn btn-success general" href="waiting.html" role="button">OK</a>
+        </div>
+    </div>
+
+    <!-- Join Room Page -->
+    <div data-role="page" id="joinGame">
+        <div data-role="header">
+            <h1>Join Room</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <ul class="room-list">
+                <li><a href="#enterGame">Room 1</a></li>
+                <li><a href="#enterGame">Room 2</a></li>
+                <li><a href="#enterGame">Room 3</a></li>
+            </ul>
+            <div class="two-buttons">
+               <a class="btn btn-primary general" href="#homepage" role="button">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Waiting for all players to enter Page -->
+    <div data-role="page" id="waiting">
+        <div data-role="header">
+            <h1>Waiting...</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h3 class="general"> <span id="players-waiting">5</span> players waiting...</h4>
+
+            <p class="general">John</p>
+            <p class="general">Jack</p>
+            <p class="general">Don Corleone</p>
+            <p class="general">George</p>
+            <p class="general">George Bush</p>
+
+
+            <div class="two-buttons">
+                <a class="btn btn-success general master" href="#pregame" role="button">Start the game (Master only)</a>
+                <a class="btn btn-primary general" href="#enterGame" role="button">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pregame Page -->
+    <div data-role="page" id="pregame">
+        <div data-role="header">
+            <h1>Game</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h2 class="general">Your roll is:</h2>
+            <p class="general">MATHAFACKING BADASS AWYESSSSS</p>
+
+            <div class="role-image">
+                <img src="./img/blaa.jpg" align="middle"></img><br>
+            </div>
+
+            <div class="two-buttons">
+                <a class="btn btn-success general" href="#game" role="button">Game Screen</a>
+                <a class="btn btn-primary general" href="#waiting" role="button">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enter Game Page -->
+    <div data-role="page" id="enterGame">
+        <div data-role="header">
+            <h1>Enter Game</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div class="form-general">
+                <p class="general"> Username </p>
+                <input class="general" type="text" name="username">
+
+                <p class="general"> Room Password </p>
+                <input class="general" type="password" name="password">
+            </div>
+
+            <div class="two-buttons">
+                <a class="btn btn-success home-button general" href="#waiting" role="button">Join</a>
+                <a class="btn btn-primary home-button general" href="#joinGame" role="button">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day/Night game screen -->
+    <div data-role="page" id="game">
+        <div data-role="header">
+            <h1>Day/Night</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div class="two-button">
+                <a class="btn btn-primary general" href="#pregame" role="button">Back</a>
+                <a class="btn btn-success general" href="#test" role="button">Test</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div data-role="page" id="test">
+        <div data-role="header">
+            <h1>test</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
 
     <!--Cordova-->
     <!--<script type="text/javascript" src="cordova.js"></script>-->
