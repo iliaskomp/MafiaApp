@@ -26,8 +26,8 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
     <!--Google fonts-->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
@@ -52,8 +52,8 @@
             <img id="pistol" class="blood" src="img/pistol.png" alt="Pistol" width="100px">
 
             <div class="home-buttons">
-                <a class="btn btn-success btn-lg" href="#createGame" role="button">Create Game</a>
-                <a class="btn btn-primary btn-lg" href="#joinGame" role="button">Join Game</a>
+                <a class="ui-btn" href="#createGame" role="button">Create Game</a>
+                <a class="ui-btn ui-btn-b" href="#joinGame" role="button">Join Game</a>
             </div>
         </div>
     </div>
@@ -77,8 +77,8 @@
             </div>
 
             <div class="two-buttons">
-                <a class="btn btn-success " href="#waiting" role="button">Start Game</a><br>
-                <a class="btn btn-primary" href="#homepage" role="button">Back</a>
+                <a class="ui-btn " href="#waiting" role="button">Start Game</a><br>
+                <a class="ui-btn ui-btn-b" href="#homepage" role="button">Back</a>
             </div>
 
             <a id="settings-icon" href="#settings" role="button" data-transition="flip">
@@ -109,7 +109,7 @@
                 <input type="range" name="slider-4" id="slider-4" value="5" min="1" max="200">
             </div>
 
-            <a class="btn btn-success general" href="waiting.html" role="button">OK</a>
+            <a class="ui-btn general" href="waiting.html" role="button">OK</a>
         </div>
     </div>
 
@@ -120,13 +120,14 @@
         </div>
 
         <div role="main" class="ui-content">
-            <ul class="room-list">
+            <ul class="room-list" data-role="listview">
                 <li><a href="#enterGame">Room 1</a></li>
                 <li><a href="#enterGame">Room 2</a></li>
                 <li><a href="#enterGame">Room 3</a></li>
+                <li><a href="#enterGame">Room 4</a></li>
             </ul>
             <div class="two-buttons">
-               <a class="btn btn-primary general" href="#homepage" role="button">Back</a>
+               <a class="ui-btn ui-btn-b general" href="#homepage" role="button">Back</a>
             </div>
         </div>
     </div>
@@ -148,8 +149,8 @@
 
 
             <div class="two-buttons">
-                <a class="btn btn-success general master" href="#pregame" role="button">Start the game (Master only)</a>
-                <a class="btn btn-primary general" href="#enterGame" role="button">Back</a>
+                <a class="ui-btn general" href="#pregame" role="button">Start the game (Master only)</a>
+                <a class="ui-btn ui-btn-b general" href="#enterGame" role="button">Back</a>
             </div>
         </div>
     </div>
@@ -169,8 +170,8 @@
             </div>
 
             <div class="two-buttons">
-                <a class="btn btn-success general" href="#game" role="button">Game Screen</a>
-                <a class="btn btn-primary general" href="#waiting" role="button">Back</a>
+                <a class="ui-btn general" href="#game" role="button">Game Screen</a>
+                <a class="ui-btn ui-btn-b general" href="#waiting" role="button">Back</a>
             </div>
         </div>
     </div>
@@ -191,8 +192,8 @@
             </div>
 
             <div class="two-buttons">
-                <a class="btn btn-success home-button general" href="#waiting" role="button">Join</a>
-                <a class="btn btn-primary home-button general" href="#joinGame" role="button">Back</a>
+                <a class="ui-btn general" href="#waiting" role="button">Join</a>
+                <a class="ui-btn ui-btn-b general" href="#joinGame" role="button">Back</a>
             </div>
         </div>
     </div>
@@ -205,8 +206,8 @@
 
         <div role="main" class="ui-content">
             <div class="two-button">
-                <a class="btn btn-primary general" href="#pregame" role="button">Back</a>
-                <a class="btn btn-success general" href="#test" role="button">Test</a>
+                <a class="ui-btn general" href="#pregame" role="button">Back</a>
+                <a class="ui-btn-b general" href="#test" role="button">Test</a>
             </div>
 
         </div>
