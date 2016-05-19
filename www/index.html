@@ -44,6 +44,7 @@
 <body>
     <!-- Homepage -->
     <div data-role="page" id="homepage">
+
         <div data-role="header">
             <h1>Home</h1>
         </div>
@@ -60,6 +61,7 @@
 
     <!-- Create Game Page -->
     <div data-role="page" id="createGame">
+
         <div data-role="header">
             <h1>Create Game</h1>
         </div>
@@ -90,6 +92,7 @@
 
     <!-- Settings Dialog Page -->
     <div data-role="page" id="settings" data-dialog="true">
+
         <div data-role="header">
             <h1>Settings</h1>
         </div>
@@ -115,6 +118,7 @@
 
     <!-- Join Room Page -->
     <div data-role="page" id="joinGame">
+
         <div data-role="header">
             <h1>Join Room</h1>
         </div>
@@ -126,6 +130,7 @@
                 <li><a href="#enterGame">Room 3</a></li>
                 <li><a href="#enterGame">Room 4</a></li>
             </ul>
+
             <div class="two-buttons">
                <a class="ui-btn ui-btn-b general" data-rel="back" href="#homepage" role="button">Back</a>
             </div>
@@ -134,6 +139,7 @@
 
     <!-- Waiting for all players to enter Page -->
     <div data-role="page" id="waiting">
+
         <div data-role="header">
             <h1>Waiting...</h1>
         </div>
@@ -157,6 +163,7 @@
 
     <!-- Pregame Page -->
     <div data-role="page" id="pregame">
+
         <div data-role="header">
             <h1>Game</h1>
         </div>
@@ -178,6 +185,7 @@
 
     <!-- Enter Game Page -->
     <div data-role="page" id="enterGame">
+
         <div data-role="header">
             <h1>Enter Game</h1>
         </div>
@@ -201,6 +209,7 @@
 
 <!-- Day Page -->
     <div data-role="page" id="day" class="center">
+
         <div data-role="header">
             <h1>Day</h1>
         </div>
@@ -211,28 +220,34 @@
                 <h4>Your Character</h4>
                 <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
             </div>
-            <hr>
-                <div class="row player-icon-row">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                </div>
 
-                <div class="row player-icon-row">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                </div>
-                <div>
-                    <p class="timer"><b>02:39</b></p>
-                </div>
+            <hr>
+
+            <div class="row player-icon-row">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
             </div>
 
+            <div class="row player-icon-row">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+            </div>
+
+            <div>
+                <p class="timer"><b>02:39</b></p>
+            </div>
+
+            <div class="center">
+                <a class="ui-btn ui-btn general" href="#day" role="button">Continue</a>
+            </div>
         </div>
     </div>
 
 <!-- Night Page -->
     <div data-role="page" id="night" class="center">
+
         <div data-role="header">
             <h1>Night</h1>
         </div>
@@ -243,49 +258,57 @@
                 <h4>Your Character</h4>
                 <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
             </div>
+
             <hr>
-                <div class="row player-icon-row">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <img class="char-icon dead-icon" src="img/head-icon64-red-dead.png" alt="Player Icon">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                </div>
 
-                <div class="row player-icon-row">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <img class="char-icon mafia-select-icon" src="img/head-icon64-green.png" alt="Player Icon">
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                </div>
-                <div>
-                    <p class="timer"><b>02:39</b></p>
-                </div>
-                <div id="kill-div" class="center">
-                    <p>Tap an icon to kill, then confirm OK</p>
-                                OR
-                    <p>Press OK to continue</p>
-                    <a id="ok-kill" class="ui-btn ui-btn-b general" href="#info" role="button">OK</a>
-                </div>
-
+            <div class="row player-icon-row">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                <img class="char-icon dead-icon" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
             </div>
 
+            <div class="row player-icon-row">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                <img class="char-icon mafia-select-icon" src="img/head-icon64-green.png" alt="Player Icon">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+            </div>
+
+            <div>
+                <p class="timer"><b>02:39</b></p>
+            </div>
+
+            <div id="kill-div" class="center">
+                <p>Tap an icon to kill, then confirm OK</p>
+                            OR
+                <p>Press OK to continue</p>
+                <a id="ok-kill" class="ui-btn ui-btn-b general" href="#info" role="button">OK</a>
+            </div>
         </div>
     </div>
 
     <!-- Enter Game Page -->
     <div data-role="page" id="info">
+
         <div data-role="header">
             <h1>Game Info</h1>
         </div>
+
         <div role="main" class="ui-content">
+
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
                 <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
             </div>
+
             <hr>
+
             <div class="center">
                 <p>"Player 3" has been killed!</p>
                  <img class="char-icon gun-icon" src="img/head-icon64-red-gun.png" alt="Player Icon">
             </div>
+
             <hr>
+
             <div class="votes center">
                 <h3>Votes</h3>
                 <ul>
@@ -299,8 +322,9 @@
                     </li>
                 </ul>
             </div>
-            <div>
-                <a id="ok-kill" class="ui-btn ui-btn general" href="#day" role="button">OK</a>
+
+            <div class="center">
+                <a class="ui-btn ui-btn general" href="#day" role="button">OK</a>
             </div>
         </div>
     </div>
