@@ -198,21 +198,6 @@
         </div>
     </div>
 
-    <!-- Day/Night game screen -->
-
-<!--     <div data-role="page" id="day">
-        <div data-role="header">
-            <h1>Day/Night</h1>
-        </div>
-
-        <div role="main" class="ui-content">
-            <div class="two-button">
-                <a class="ui-btn general" data-rel="back" href="#pregame" role="button">Back</a>
-                <a class="ui-btn-b general" href="#day" role="button">Test</a>
-            </div>
-
-        </div>
-    </div> -->
 
 <!-- Day Screen -->
     <div data-role="page" id="day" class="center">
@@ -227,7 +212,7 @@
                 <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
             </div>
             <hr>
-            <div class="row player-icon-row">
+                <div class="row player-icon-row">
                     <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
                     <img class="char-icon dead" src="img/head-icon64-d.png" alt="Player Icon">
                     <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
@@ -238,13 +223,51 @@
                     <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
                     <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
                 </div>
-
+                <div>
+                    <p class="timer"><b>02:39</b></p>
+                </div>
             </div>
 
         </div>
     </div>
 
+<!-- Day Screen -->
+    <div data-role="page" id="night" class="center">
+        <div data-role="header">
+            <h1>Night</h1>
+        </div>
 
+        <div role="main" class="ui-content">
+
+            <div id="player-char" class="row">
+                <h4>Your Character</h4>
+                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+            </div>
+            <hr>
+                <div class="row player-icon-row">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <img class="char-icon dead" src="img/head-icon64-d.png" alt="Player Icon">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                </div>
+
+                <div class="row player-icon-row">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                </div>
+                <div id="kill-div" class="center">
+                    <p>Tap an icon to kill, then confirm OK</p>
+                                OR
+                    <p>Press OK to continue</p>
+                    <a id="ok-kill" class="ui-btn ui-btn-b general" href="#" role="button">OK</a>
+                </div>
+<!--                 <div>
+                    <p class="timer"><b>02:39</b></p>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
 
 
 
