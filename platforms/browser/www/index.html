@@ -42,6 +42,7 @@
     <title>Title</title>
     </head>
 <body>
+
     <!-- Homepage -->
     <div data-role="page" id="homepage">
 
@@ -53,8 +54,8 @@
             <img id="pistol" class="blood" src="img/pistol.png" alt="Pistol" width="100px">
 
             <div class="home-buttons">
-                <a class="ui-btn" href="#createGame" role="button">Create Game</a>
-                <a class="ui-btn ui-btn-b" href="#joinGame" role="button">Join Game</a>
+                <a class="ui-btn" href="#createGame" role="button" data-transition="slide">Create Game</a>
+                <a class="ui-btn ui-btn-b" href="#joinGame" role="button" data-transition="slide">Join Game</a>
             </div>
         </div>
     </div>
@@ -79,8 +80,8 @@
             </div>
 
             <div class="two-buttons">
-                <a class="ui-btn " href="#waiting" role="button">Start Game</a><br>
-                <a class="ui-btn ui-btn-b" href="#homepage" data-rel="back" role="button">Back</a>
+                <a class="ui-btn"  href="#waiting" role="button" data-transition="slide">Start Game</a><br>
+                <a class="ui-btn ui-btn-b" href="#homepage" data-rel="back" role="button" data-transition="slide">Back</a>
             </div>
 
             <a id="settings-icon" href="#settings" role="button" data-transition="flip">
@@ -88,7 +89,6 @@
             </a>
         </div>
     </div>
-
 
     <!-- Settings Dialog Page -->
     <div data-role="page" id="settings" data-dialog="true">
@@ -112,7 +112,7 @@
                 <input type="range" name="slider-4" id="slider-4" value="5" min="1" max="200">
             </div>
 
-            <a class="ui-btn general" href="#waiting" role="button">OK</a>
+            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">OK</a>
         </div>
     </div>
 
@@ -125,14 +125,14 @@
 
         <div role="main" class="ui-content">
             <ul class="room-list" data-role="listview">
-                <li><a href="#enterGame">Room 1</a></li>
-                <li><a href="#enterGame">Room 2</a></li>
-                <li><a href="#enterGame">Room 3</a></li>
-                <li><a href="#enterGame">Room 4</a></li>
+                <li><a href="#enterGame" data-transition="pop">Room 1</a></li>
+                <li><a href="#enterGame" data-transition="pop">Room 2</a></li>
+                <li><a href="#enterGame" data-transition="pop">Room 3</a></li>
+                <li><a href="#enterGame" data-transition="pop">Room 4</a></li>
             </ul>
 
             <div class="two-buttons">
-               <a class="ui-btn ui-btn-b general" data-rel="back" href="#homepage" role="button">Back</a>
+               <a class="ui-btn ui-btn-b general" data-rel="back" href="#homepage" role="button" data-transition="slide">Back</a>
             </div>
         </div>
     </div>
@@ -155,8 +155,8 @@
 
 
             <div class="two-buttons">
-                <a class="ui-btn general" href="#pregame" role="button">Start the game (Master only)</a>
-                <a class="ui-btn ui-btn-b general" data-rel="back" href="#enterGame" role="button">Back</a>
+                <a class="ui-btn general" href="#pregame" role="button" data-transition="slide">Start the game (Master only)</a>
+                <a class="ui-btn ui-btn-b general" data-rel="back" href="#enterGame" role="button" data-transition="slide">Back</a>
             </div>
         </div>
     </div>
@@ -177,8 +177,8 @@
             </div>
 
             <div class="two-buttons">
-                <a class="ui-btn general" href="#day" role="button">Game Screen</a>
-                <a class="ui-btn ui-btn-b general" data-rel="back" href="#waiting" role="button">Back</a>
+                <a class="ui-btn general" href="#day" role="button" data-transition="slide">Game Screen</a>
+                <a class="ui-btn ui-btn-b general" data-rel="back" href="#waiting" role="button" data-transition="slide">Back</a>
             </div>
         </div>
     </div>
@@ -200,14 +200,14 @@
             </div>
 
             <div class="two-buttons">
-                <a class="ui-btn general" href="#waiting" role="button">Join</a>
-                <a class="ui-btn ui-btn-b general" data-rel="back" href="#joinGame" role="button">Back</a>
+                <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">Join</a>
+                <a class="ui-btn ui-btn-b general" data-rel="back" href="#joinGame" role="button" data-transition="slide">Back</a>
             </div>
         </div>
     </div>
 
 
-<!-- Day Page -->
+    <!-- Day Page -->
     <div data-role="page" id="day" class="center">
 
         <div data-role="header">
@@ -240,12 +240,12 @@
             </div>
 
             <div class="center">
-                <a class="ui-btn ui-btn general" href="#day" role="button">Continue</a>
+                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">Continue</a>
             </div>
         </div>
     </div>
 
-<!-- Night Page -->
+    <!-- Night Page -->
     <div data-role="page" id="night" class="center">
 
         <div data-role="header">
@@ -281,7 +281,7 @@
                 <p>Tap an icon to kill, then confirm OK</p>
                             OR
                 <p>Press OK to continue</p>
-                <a id="ok-kill" class="ui-btn ui-btn-b general" href="#info" role="button">OK</a>
+                <a id="ok-kill" class="ui-btn ui-btn-b general" href="#info" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
@@ -324,7 +324,7 @@
             </div>
 
             <div class="center">
-                <a class="ui-btn ui-btn general" href="#day" role="button">OK</a>
+                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
@@ -334,5 +334,6 @@
     <!--<script type="text/javascript" src="cordova.js"></script>-->
     <!--Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </body>
 </html>
