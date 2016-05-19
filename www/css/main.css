@@ -9,8 +9,15 @@
     padding: 100px 100px 100px 100px;
     margin: 100px 100px 100px 100px;
 }*/
-
-.form-general {
+/*.row {
+    margin:0;
+    padding:0;
+}
+.center {
+    margin:0 auto;
+    width:100%;
+}*/
+.form-general  {
     margin: 0 auto;
     margin-bottom: 20px;
     width:80%;
@@ -137,4 +144,29 @@
     display:block;
     margin: 0 auto;
     text-align: center;
+}
+
+/* Day/Night Page*/
+
+#player-char h4{
+    text-align: center;
+}
+
+#player-char {
+    text-align: center;
+    margin-top:1em;
+    margin-bottom:2em;
+}
+
+#other-char {
+}
+#day .player-icon-row {
+    text-align: center;
+}
+#day hr {
+    width:80%;
+    border-color:#999;
+}
+.char-icon {
+    padding: 0.6em;
 }

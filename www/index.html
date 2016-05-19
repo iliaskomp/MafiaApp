@@ -109,7 +109,7 @@
                 <input type="range" name="slider-4" id="slider-4" value="5" min="1" max="200">
             </div>
 
-            <a class="ui-btn general" href="waiting.html" role="button">OK</a>
+            <a class="ui-btn general" href="#waiting" role="button">OK</a>
         </div>
     </div>
 
@@ -170,7 +170,7 @@
             </div>
 
             <div class="two-buttons">
-                <a class="ui-btn general" href="#game" role="button">Game Screen</a>
+                <a class="ui-btn general" href="#day" role="button">Game Screen</a>
                 <a class="ui-btn ui-btn-b general" data-rel="back" href="#waiting" role="button">Back</a>
             </div>
         </div>
@@ -199,7 +199,8 @@
     </div>
 
     <!-- Day/Night game screen -->
-    <div data-role="page" id="game">
+
+<!--     <div data-role="page" id="day">
         <div data-role="header">
             <h1>Day/Night</h1>
         </div>
@@ -207,25 +208,41 @@
         <div role="main" class="ui-content">
             <div class="two-button">
                 <a class="ui-btn general" data-rel="back" href="#pregame" role="button">Back</a>
-                <a class="ui-btn-b general" href="#test" role="button">Test</a>
+                <a class="ui-btn-b general" href="#day" role="button">Test</a>
             </div>
 
         </div>
-    </div>
+    </div> -->
 
-
-    <div data-role="page" id="test">
+<!-- Day Screen -->
+    <div data-role="page" id="day" class="center">
         <div data-role="header">
-            <h1>test</h1>
+            <h1>Day</h1>
         </div>
 
         <div role="main" class="ui-content">
 
+            <div id="player-char" class="row">
+                <h4>Your Character</h4>
+                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+            </div>
+            <hr>
+            <div class="row player-icon-row">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <img class="char-icon dead" src="img/head-icon64-d.png" alt="Player Icon">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                </div>
+
+                <div class="row player-icon-row">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                </div>
+
+            </div>
+
         </div>
     </div>
-
-
-
 
 
 
