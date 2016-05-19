@@ -9,8 +9,16 @@
     padding: 100px 100px 100px 100px;
     margin: 100px 100px 100px 100px;
 }*/
-
-.form-general {
+.row {
+    margin:0;
+    padding:0;
+}
+.center {
+    margin:0 auto;
+    width:80%;
+    text-align: center
+}
+.form-general  {
     margin: 0 auto;
     margin-bottom: 20px;
     width:80%;
@@ -137,4 +145,53 @@
     display:block;
     margin: 0 auto;
     text-align: center;
+}
+
+/* Day/Night Page*/
+#player-char {
+    text-align: center;
+    margin-bottom:1em;
+}
+
+#player-char h4{
+    text-align: center;
+}
+
+
+#other-char {
+}
+.player-icon-row {
+    text-align: center;
+}
+hr {
+    width:80%;
+    border-color:#999;
+    margin-top:12px;
+    margin-bottom:12px;
+}
+.char-icon {
+    padding: 0.4em;
+}
+.timer {
+    margin-top:1em;
+    text-align: center;
+    font-size: 1.3em;
+    color: #DA7B28;
+}
+
+/*Night*/
+#kill-div p:first-child {
+    margin-top:1.2em;
+    margin-bottom:0;
+}
+#kill-div p:last-child {
+
+    margin-bottom:1.0em;
+}
+
+/*Info page*/
+
+#info ul {
+    list-style:none;
+    padding-left:0;
 }
