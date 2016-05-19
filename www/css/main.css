@@ -185,8 +185,13 @@ hr {
     margin-bottom:0;
 }
 #kill-div p:last-child {
-  /*  display:inline;
-    float:left;*/
-    /*font-size:1.2em;*/
+
     margin-bottom:1.0em;
+}
+
+/*Info page*/
+
+#info ul {
+    list-style:none;
+    padding-left:0;
 }
