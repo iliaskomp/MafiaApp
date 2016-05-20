@@ -43,7 +43,8 @@
     <title>Title</title>
     </head>
 <body>
-
+    <input type="hidden" name="playerId" value="">
+    <input type="hidden" name="roomId" value="">
     <!-- Homepage -->
     <div data-role="page" id="homepage">
 
@@ -56,7 +57,7 @@
 
             <div class="home-buttons">
                 <a class="ui-btn" href="#createGame" role="button" data-transition="slide">Create Game</a>
-                <a class="ui-btn ui-btn-b" href="#joinGame" role="button" data-transition="slide">Join Game</a>
+                <a id="joinGame"  class="ui-btn ui-btn-b" href="#joinGame" role="button" data-transition="slide">Join Game</a>
             </div>
         </div>
     </div>
@@ -76,7 +77,7 @@
                 <p class="general">Room Password (optional)</p>
                 <input id="password" class="general input-form" type="password" name="password">
 
-                <p class="general master">User Name (Only Master)</p>
+                <p class="general master">User Name</p>
                 <input id="master-name" class="general input-form" type="text" name="name">
             </div>
 
@@ -125,11 +126,11 @@
         </div>
 
         <div role="main" class="ui-content">
-            <ul class="room-list" data-role="listview">
-                <li><a href="#enterGame" data-transition="pop">Room 1</a></li>
+            <ul id="list" class="room-list" data-role="listview">
+                <!--<li><a href="#enterGame" data-transition="pop">Room 1</a></li>
                 <li><a href="#enterGame" data-transition="pop">Room 2</a></li>
                 <li><a href="#enterGame" data-transition="pop">Room 3</a></li>
-                <li><a href="#enterGame" data-transition="pop">Room 4</a></li>
+                <li><a href="#enterGame" data-transition="pop">Room 4</a></li>-->
             </ul>
 
             <div class="two-buttons">
@@ -146,18 +147,13 @@
         </div>
 
         <div role="main" class="ui-content">
-            <h3 class="general"> <span id="players-waiting">5</span> players waiting...</h4>
-
-            <p class="general">John</p>
-            <p class="general">Jack</p>
-            <p class="general">Don Corleone</p>
-            <p class="general">George</p>
-            <p class="general">George Bush</p>
+            <h3 class="general"> <span id="players-waiting"></span> players waiting...</h3>
+            <div id="players"></div>
 
 
             <div class="two-buttons">
-                <a class="ui-btn general" href="#pregame" role="button" data-transition="slide">Start the game (Master only)</a>
-                <a class="ui-btn ui-btn-b general" data-rel="back" href="#enterGame" role="button" data-transition="slide">Back</a>
+                <a id="start" style="display: none" class="ui-btn general" href="#" role="button" data-transition="slide">Start the game</a>
+                <a id="leave" class="ui-btn ui-btn-b general" data-rel="back" href="#enterGame" role="button" data-transition="slide">Leave Game</a>
             </div>
         </div>
     </div>
@@ -171,15 +167,14 @@
 
         <div role="main" class="ui-content">
             <h2 class="general">Your roll is:</h2>
-            <p class="general">MATHAFACKING BADASS AWYESSSSS</p>
+            <p id="role" class="general"></p>
 
             <div class="role-image">
                 <img src="./img/mafia-icon128.png" align="middle"></img><br>
             </div>
 
             <div class="two-buttons">
-                <a class="ui-btn general" href="#day" role="button" data-transition="slide">Game Screen</a>
-                <a class="ui-btn ui-btn-b general" data-rel="back" href="#waiting" role="button" data-transition="slide">Back</a>
+                <a id="gameScreen" class="ui-btn general" href="#" role="button" data-transition="slide">Game Screen</a>
             </div>
         </div>
     </div>
@@ -194,14 +189,14 @@
         <div role="main" class="ui-content">
             <div class="form-general">
                 <p class="general"> Username </p>
-                <input class="general" type="text" name="username">
+                <input id="userName" class="general" type="text" name="username">
 
                 <p class="general"> Room Password </p>
-                <input class="general" type="password" name="password">
+                <input id="password" class="general" type="password" name="password">
             </div>
 
             <div class="two-buttons">
-                <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">Join</a>
+                <a id="join" class="ui-btn general" href="" role="button" data-transition="slide">Join</a>
                 <a class="ui-btn ui-btn-b general" data-rel="back" href="#joinGame" role="button" data-transition="slide">Back</a>
             </div>
         </div>
@@ -224,8 +219,8 @@
             </div>
 
             <hr>
-
-            <div class="row player-icon-row">
+            <div id="players"></div>
+            <!--<div class="row player-icon-row">
                 <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
                 <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
                 <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
@@ -235,7 +230,7 @@
                 <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
                 <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
                 <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-            </div>
+            </div>-->
 
             <div>
                 <p class="timer"><b>02:39</b></p>
