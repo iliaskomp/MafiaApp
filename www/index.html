@@ -173,7 +173,7 @@
             <p class="general">MATHAFACKING BADASS AWYESSSSS</p>
 
             <div class="role-image">
-                <img src="./img/blaa.jpg" align="middle"></img><br>
+                <img src="./img/mafia-icon128.png" align="middle"></img><br>
             </div>
 
             <div class="two-buttons">
@@ -217,8 +217,9 @@
         <div role="main" class="ui-content">
 
             <div id="player-char" class="row">
-                <h4>Your Character</h4>
-                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+                <h4>Your Character</h4><p><i>(Tap icon to reveal)</i></p>
+                <img class="char-icon-main hidden-icon" src="img/hidden-icon64.png" alt="Player Character">
+                <img class="char-icon-main reveal-icon hide" src="img/mafia-icon64.png" alt="Player Character">
             </div>
 
             <hr>
@@ -240,7 +241,7 @@
             </div>
 
             <div class="center">
-                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">Continue</a>
+                <a class="ui-btn ui-btn general" href="#night" role="button" data-transition="slide">Continue</a>
             </div>
         </div>
     </div>
@@ -255,15 +256,19 @@
         <div role="main" class="ui-content">
 
             <div id="player-char" class="row">
-                <h4>Your Character</h4>
-                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+                <h4>Your Character</h4><p><i>(Tap icon to reveal)</i></p>
+                <img class="char-icon-main hidden-icon" src="img/hidden-icon64.png" alt="Player Character">
+                <img class="char-icon-main reveal-icon hide" src="img/mafia-icon64.png" alt="Player Character">
             </div>
+
 
             <hr>
 
             <div class="row player-icon-row">
                 <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                <!-- <p style>test</p> -->
                 <img class="char-icon dead-icon" src="img/head-icon64-red-dead.png" alt="Player Icon">
+
                 <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
             </div>
 
@@ -334,6 +339,15 @@
     <!--<script type="text/javascript" src="cordova.js"></script>-->
     <!--Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+    <script>
+    $(".hidden-icon").on('click',function(){
+        $('.hidden-icon').addClass('hide');
+        $('.reveal-icon').removeClass('hide');
+    });
+    $(".reveal-icon").on('click',function(){
+        $('.reveal-icon').addClass('hide');
+        $('.hidden-icon').removeClass('hide');
+    });
+    </script>
 </body>
 </html>
