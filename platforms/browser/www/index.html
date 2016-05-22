@@ -45,6 +45,7 @@
 <body>
     <input type="hidden" name="playerId" value="">
     <input type="hidden" name="roomId" value="">
+
     <!-- Homepage -->
     <div data-role="page" id="homepage">
 
@@ -362,10 +363,21 @@
         </div>
     </div>
 
+    <!-- Will move to js file soon -->
+    <script>
+       $(".hidden-icon").on('click',function(){
+           $('.hidden-icon').addClass('hide');
+           $('.reveal-icon').removeClass('hide');
+       });
+       $(".reveal-icon").on('click',function(){
+           $('.reveal-icon').addClass('hide');
+           $('.hidden-icon').removeClass('hide');
+       });
+    </script>
 
     <script src="js/main.js"/>
     <!--Cordova-->
-    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript" src="cordova.js"></script>
     <!--Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
