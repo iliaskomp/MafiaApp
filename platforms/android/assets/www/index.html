@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<!--     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> -->
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+    <!--Google fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <!--JQuery Mobile-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--General CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <!--Index CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <title>Title</title>
+    </head>
+<body>
+    <input type="hidden" name="playerId" value="">
+    <input type="hidden" name="roomId" value="">
+
+    <!-- Homepage -->
+    <div data-role="page" id="homepage">
+
+        <div data-role="header">
+            <h1>Home</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <h1 class="title">Mafia</h1>
+            <img id="pistol" class="blood" src="img/pistol.png" alt="Pistol" width="100px">
+
+            <div class="home-buttons">
+                <a class="ui-btn" href="#createGame" role="button" data-transition="slide">Create Game</a>
+                <a id="joinGame"  class="ui-btn ui-btn-b" href="#joinGame" role="button" data-transition="slide">Join Game</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Game Page -->
+    <div data-role="page" id="createGame">
+
+        <div data-role="header">
+            <h1>Create Game</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div class="form-general">
+                <p class="general">Room Name</p>
+                <input id="room-name" class="general input-form" type="text" name="name">
+
+                <p class="general">Room Password (optional)</p>
+                <input id="password" class="general input-form" type="password" name="password">
+
+                <p class="general master">User Name</p>
+                <input id="master-name" class="general input-form" type="text" name="name">
+            </div>
+
+            <div class="two-buttons">
+                <a id="start" class="ui-btn " href="" role="button">Start Game</a><br>
+                <a class="ui-btn ui-btn-b" href="#homepage" data-rel="back" role="button">Back</a>
+            </div>
+
+            <a id="settings-icon" href="#settings" role="button" data-transition="flip">
+                <img  src="img/settings_icon.png" alt="Settings">
+            </a>
+        </div>
+    </div>
+
+    <!-- Settings Dialog Page -->
+    <div data-role="page" id="settings" data-dialog="true">
+
+        <div data-role="header">
+            <h1>Settings</h1>
+        </div>
+
+        <div role="main" class="ui-content" id="settings">
+            <div id="sliders">
+                <label for="slider-1">Mafia:</label>
+                <input type="range" name="slider-1" id="mafia" value="2" min="0" max="6">
+
+                <label for="slider-2">Doctors</label>
+                <input type="range" name="slider-2" id="doctor" value="1" min="0" max="6">
+
+                <label for="slider-3">Detective:</label>
+                <input type="range" name="slider-3" id="detective" value="1" min="0" max="6">
+
+                <label for="slider-4">Time(minutes):</label>
+                <input type="range" name="slider-4" id="time" value="5" min="1" max="200">
+            </div>
+
+            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">OK</a>
+        </div>
+    </div>
+
+    <!-- Join Room Page -->
+    <div data-role="page" id="joinGame">
+
+        <div data-role="header">
+            <h1>Join Room</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <ul id="list" class="room-list" data-role="listview">
+                <!--<li><a href="#enterGame" data-transition="pop">Room 1</a></li>
+                <li><a href="#enterGame" data-transition="pop">Room 2</a></li>
+                <li><a href="#enterGame" data-transition="pop">Room 3</a></li>
+                <li><a href="#enterGame" data-transition="pop">Room 4</a></li>-->
+            </ul>
+
+            <div class="two-buttons">
+               <a class="ui-btn ui-btn-b general" data-rel="back" href="#homepage" role="button" data-transition="slide">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Waiting for all players to enter Page -->
+    <div data-role="page" id="waiting">
+
+        <div data-role="header">
+            <h1>Waiting...</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h3 class="general"> <span id="players-waiting"></span> players waiting...</h3>
+            <div id="players"></div>
+
+
+            <div class="two-buttons">
+                <a id="start" style="display: none" class="ui-btn general" href="#" role="button" data-transition="slide">Start the game</a>
+                <a id="leave" class="ui-btn ui-btn-b general" data-rel="back" href="#enterGame" role="button" data-transition="slide">Leave Game</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pregame Page -->
+    <div data-role="page" id="pregame">
+
+        <div data-role="header">
+            <h1>Game</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h2 class="general">Your roll is:</h2>
+            <p id="role" class="general"></p>
+
+            <div class="role-image">
+                <img src="./img/mafia-icon128.png" align="middle"></img><br>
+            </div>
+
+            <div class="two-buttons">
+                <a class="ui-btn general" href="#day" role="button" data-transition="slide">Continue to game..</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enter Game Page -->
+    <div data-role="page" id="enterGame">
+
+        <div data-role="header">
+            <h1>Enter Game</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div class="form-general">
+                <p class="general"> Username </p>
+                <input id="userName" class="general" type="text" name="username">
+
+                <p class="general"> Room Password </p>
+                <input id="password" class="general" type="password" name="password">
+            </div>
+
+            <div class="two-buttons">
+                <a id="join" class="ui-btn general" href="" role="button" data-transition="slide">Join</a>
+                <a class="ui-btn ui-btn-b general" data-rel="back" href="#joinGame" role="button" data-transition="slide">Back</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Day Page -->
+    <div data-role="page" id="day" class="center">
+
+        <div data-role="header">
+            <h1>Day</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <div id="player-char" class="row">
+                <h4>Your Character</h4>
+                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+            </div>
+
+            <hr>
+
+            <div class="row player-icon-row center">
+
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 1</p>
+                </div>
+                <div>
+                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                    <p>Player 2</p>
+                </div>
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 3</p>
+                </div>
+            </div>
+
+            <div class="row player-icon-row center">
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 4</p>
+                </div>
+                <div>
+                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                    <p>Player 5</p>
+                </div>
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 6</p>
+                </div>
+            </div>
+
+            <div>
+                <p class="timer"><b>02:39</b></p>
+            </div>
+
+            <div class="center">
+                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">Continue</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Night Page -->
+    <div data-role="page" id="night" class="center">
+
+        <div data-role="header">
+            <h1>Night</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <div id="player-char" class="row">
+                <h4>Your Character</h4>
+                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+            </div>
+
+            <hr>
+
+            <div class="row player-icon-row center">
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 1</p>
+                </div>
+                <div>
+                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                    <p>Player 2</p>
+                </div>
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 3</p>
+                </div>
+            </div>
+
+            <div class="row player-icon-row center">
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 4</p>
+                </div>
+                <div>
+                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                    <p>Player 5</p>
+                </div>
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 6</p>
+                </div>
+            </div>
+
+            <div>
+                <p class="timer"><b>02:39</b></p>
+            </div>
+
+            <div id="kill-div" class="center">
+                <p>Tap an icon to kill, then confirm OK</p>
+                            OR
+                <p>Press OK to continue</p>
+                <a id="ok-kill" class="ui-btn ui-btn-b general" href="#info" role="button" data-transition="slide">OK</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enter Game Page -->
+    <div data-role="page" id="info">
+
+        <div data-role="header">
+            <h1>Game Info</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <div id="player-char" class="row">
+                <h4>Your Character</h4>
+                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+            </div>
+
+            <hr>
+
+            <div class="center">
+                <p>"Player 3" has been killed!</p>
+                 <img class="char-icon gun-icon" src="img/head-icon64-red-gun.png" alt="Player Icon">
+            </div>
+
+            <hr>
+
+            <div class="votes center">
+                <h3>Votes</h3>
+                <ul>
+                    <li>
+                        <p><span class="player-voting">Player 3</span> -> <span class="player-voted">Player 3</span></p>
+                        <p><span class="player-voting">Player 3</span> -> <span class="player-voted">Player 3</span></p>
+                        <p><span class="player-voting">Player 3</span> -> <span class="player-voted">Player 3</span></p>
+                        <p><span class="player-voting">Player 3</span> -> <span class="player-voted">Player 3</span></p>
+                        <p><span class="player-voting">Player 3</span> -> <span class="player-voted">Player 3</span></p>
+                        <p><span class="player-voting">Player 3</span> -> <span class="player-voted">Player 3</span></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="center">
+                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">OK</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Will move to js file soon -->
+    <script>
+       $(".hidden-icon").on('click',function(){
+           $('.hidden-icon').addClass('hide');
+           $('.reveal-icon').removeClass('hide');
+       });
+       $(".reveal-icon").on('click',function(){
+           $('.reveal-icon').addClass('hide');
+           $('.hidden-icon').removeClass('hide');
+       });
+    </script>
+
+    <script src="js/main.js"/>
+    <!--Cordova-->
+    <script type="text/javascript" src="cordova.js"></script>
+    <!--Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
+</html>
