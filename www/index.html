@@ -25,6 +25,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
@@ -53,7 +54,7 @@
             <h1>Home</h1>
         </div>
         <div role="main" class="ui-content">
-            <h1 class="title">Mafia</h1>
+            <h1 class="title">Mafiaddsdsd</h1>
             <img id="pistol" class="blood" src="img/pistol.png" alt="Pistol" width="100px">
 
             <div class="home-buttons">
@@ -171,7 +172,7 @@
             <p id="role" class="general"></p>
 
             <div class="role-image">
-                <img src="./img/blaa.jpg" align="middle"></img><br>
+                <img src="./img/mafia-icon128.png" align="middle"></img><br>
             </div>
 
             <div class="two-buttons">
@@ -220,6 +221,37 @@
 
             <hr>
             <div id="players"></div>
+
+            <div class="row player-icon-row center">
+
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 1</p>
+                </div>
+                <div>
+                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                    <p>Player 2</p>
+                </div>
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 3</p>
+                </div>
+            </div>
+
+            <div class="row player-icon-row center">
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 4</p>
+                </div>
+                <div>
+                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                    <p>Player 5</p>
+                </div>
+                <div>
+                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                    <p>Player 6</p>
+                </div>
+            </div>
 
             <div>
                 <span id="time" class="timer"></span>
@@ -315,10 +347,21 @@
         </div>
     </div>
 
+    <!-- Will move to js file soon -->
+    <script>
+       $(".hidden-icon").on('click',function(){
+           $('.hidden-icon').addClass('hide');
+           $('.reveal-icon').removeClass('hide');
+       });
+       $(".reveal-icon").on('click',function(){
+           $('.reveal-icon').addClass('hide');
+           $('.hidden-icon').removeClass('hide');
+       });
+    </script>
 
     <script src="js/main.js"/>
     <!--Cordova-->
-    <!--<script type="text/javascript" src="cordova.js"></script>-->
+    <script type="text/javascript" src="cordova.js"></script>
     <!--Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
