@@ -1,8 +1,10 @@
 $(document).ready(function(){
     var waiting = 0;
     var waitingPlayers;
-    var milliseconds = Math.floor((new Date).getTime()/1000);
-    console.log(milliseconds);
+    $("input[name='playerId']").val();
+    $("input[name='roomId']").val();
+    $("input[name='status']").val();
+    //console.log(gmt);
     $('#createGame #start').click(function () {
         var data = {};
         var bool = 0;
@@ -27,8 +29,7 @@ $(document).ready(function(){
             //TODO show error message
         }
         
-    });
-    
+    });   
     $('#enterGame #join').click(function () {
         console.log("test");
         var data = {};
@@ -97,6 +98,30 @@ $(document).ready(function(){
     $('#waiting #leave').click(function () {
         stopWaiting();
         
+    });
+    
+    $('#day #test').click(function () {
+        var data = {};
+        var bool = 0;
+        data["Function"] = "getRoomPlayers";
+        data["roomId"] = "88";//$("input[name='roomId']").val();
+        doRequest(data); 
+    });
+    
+    $('#night #test').click(function () {
+        var data = {};
+        var bool = 0;
+        data["Function"] = "getRoomPlayers";
+        data["roomId"] = "88";//$("input[name='roomId']").val();
+        doRequest(data); 
+    });
+    
+    $('#pregame #gameScreen').click(function () {
+        var data = {};
+        var bool = 0;
+        data["Function"] = "getRoomPlayers";
+        data["roomId"] = "88";//$("input[name='roomId']").val();
+        doRequest(data); 
     });
     
     
@@ -217,7 +242,70 @@ $('.TableElement').click(function () {
                     //SET ROLES
                     console.log("test");             
                 }else if(obj.MessageCode == 207){
-                    $( "p#role" ).html(obj.role);
+                    $( "p#role" ).html(obj.Data[0].role);
+                }else if(obj.MessageCode == 208){
+                    
+                    var endTime = obj.EndTime;
+                    var gmt = new Date(Date.now());
+                    //var tz = gmt.getTimezoneOffset();
+                    //gmt = new Date(gmt.valueOf() + gmt.getTimezoneOffset() * 60 * 1000);
+                    gmt = Math.floor(gmt.valueOf()/1000);
+                    if($("input[name='roomId']").val() == "day"){
+                        window.location = "#night";
+                        $("input[name='roomId']").val('night');
+                        $( "#night #players" ).empty();
+                    for(var i = 0; i < obj.Data.length; i++) {
+                        var player = obj.Data[i];
+                        if(i%3 == 0){
+                            $('<div/>', {
+                            'id': i/3,
+                            'class':'row player-icon-row'
+                        }).appendTo('#night #players');
+                        }
+                        $('<img/>', {
+                            'id': player.id,
+                            'class':'char-icon',
+                            'src': 'img/head-icon64.png'
+                        }).appendTo('#night #players #'+Math.floor(i/3));
+                    }
+                    if(endTime-gmt > 0){
+                      
+                    jQuery(function ($) {
+                        var diference = endTime - gmt;
+                        display = $('#night #time');
+                        startTimer(diference, display);
+                    });
+                    }
+                    }else{
+                        window.location = "#day";
+                        $("input[name='roomId']").val('day');
+                        $( "#day #players" ).empty();
+                        for(var i = 0; i < obj.Data.length; i++) {
+                        var player = obj.Data[i];
+                            if(i%3 == 0){
+                                $('<div/>', {
+                                'id': i/3,
+                                'class':'row player-icon-row'
+                            }).appendTo('#day #players');
+                            }
+                            $('<img/>', {
+                            'id': player.id,
+                            'class':'char-icon',
+                            'src': 'img/head-icon64.png'
+                        }).appendTo('#day #players #'+Math.floor(i/3));
+                    }
+                    if(endTime-gmt > 0){
+                      
+                    jQuery(function ($) {
+                        var diference = endTime - gmt;
+                        display = $('#day #time');
+                        startTimer(diference, display);
+                    });
+                    }
+                    }                  
+                    
+                    
+                    
                 }
                 
                 else{
@@ -243,11 +331,7 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
-jQuery(function ($) {
-    var fiveMinutes = 60 * 5,
-        display = $('#time');
-    startTimer(fiveMinutes, display);
-});
+
 
 function stopWaiting() {
     clearInterval(waitingPlayers);
