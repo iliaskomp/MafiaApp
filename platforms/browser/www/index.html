@@ -46,6 +46,7 @@
     <input type="hidden" name="roomId" value="">
     <input type="hidden" name="status" value="">
     <input type="hidden" name="previous" value="day">
+
     <!-- Homepage -->
     <div data-role="page" id="homepage">
 
@@ -93,6 +94,19 @@
         </div>
     </div>
 
+    <!-- Error Modal -->
+    <div data-role="page" id="errorModal" data-dialog="true" data-close-btn="none">
+
+        <div data-role="header">
+            <h1>Error</h1>
+        </div>
+
+        <div role="main" class="ui-content" id="settings">
+            <p id="error-p">You have error...</p>
+            <a class="ui-btn general" href="#" role="button" data-transition="slide">OK</a>
+        </div>
+    </div>
+
     <!-- Settings Dialog Page -->
     <div data-role="page" id="settings" data-dialog="true">
 
@@ -115,7 +129,7 @@
                 <input type="range" name="slider-4" id="time" value="5" min="1" max="200">
             </div>
 
-            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">OK</a>
+            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">Start Game</a>
         </div>
     </div>
 
@@ -257,7 +271,7 @@
             </div>
 
             <div class="center">
-                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">Continue</a>
+                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
@@ -344,6 +358,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Will move to js file soon -->
     <script>
