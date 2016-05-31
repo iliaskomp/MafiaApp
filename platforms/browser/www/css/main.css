@@ -151,6 +151,16 @@
 }
 
 /* Day/Night Page*/
+#day {
+    background: #D9F0EB;
+}
+#night {
+    background:#333;
+}
+#night h4, #night p {
+    color:white;
+    text-shadow: none;
+}
 #player-char {
     text-align: center;
     margin-bottom:1em;
