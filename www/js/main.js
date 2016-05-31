@@ -1,26 +1,5 @@
-// Disable Back button
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    document.addEventListener("backbutton", function (e) {
-        e.preventDefault();
-    }, false );
-
-    showAndhideRole();
-}
-// Show and hide your role icon
-function showAndhideRole(){
-    // Show/Hide player icon when tapping
-   $(".hidden-icon").on('click',function(){
-       $('.hidden-icon').addClass('hide');
-       $('.reveal-icon').removeClass('hide');
-   });
-   $(".reveal-icon").on('click',function(){
-       $('.reveal-icon').addClass('hide');
-       $('.hidden-icon').removeClass('hide');
-   });
-}
-
-$(document).ready(function(){
+$(document).ready(function () {
+    console.log("test");
     var waiting = 0;
     var waitingPlayers;
     var checkStatus;
@@ -38,6 +17,7 @@ $(document).ready(function(){
 
     $('#createGame #start').click(function () {
         //CREATE GAME
+        console.log("test");
         var data = {};
         var bool = 0;
         data["Function"] = "createRoom";
@@ -192,7 +172,7 @@ $(document).ready(function(){
             data["target"] = target;
             doRequest(data);
         }
-    
+
 
     });
     $(document).on("click", ".tableElement", function () {
@@ -348,14 +328,14 @@ $(document).ready(function(){
                          }).appendTo('#night #players');
                          }*/
                         $('<div/>', {
-                         'id': player.id
-                         }).append($('<img/>', {
-                         'id': player.id,
-                         'class': 'char-icon',
-                         'src': src,
-                         'css' : 'z-index:100'
-                         })).appendTo('#night #players');// + Math.floor(i / 3)
-                         /*$('#night div#' + player.id).append($('<p/>', {
+                            'id': player.id
+                        }).append($('<img/>', {
+                            'id': player.id,
+                            'class': 'char-icon clickable-div',
+                            'src': src,
+                            'css': 'z-index:100'
+                        })).appendTo('#night #players');// + Math.floor(i / 3)
+                        /*$('#night div#' + player.id).append($('<p/>', {
                          'text': player.name
                          }));
                          $('#night div#' + player.id).append($('<p/>', {
@@ -363,11 +343,11 @@ $(document).ready(function(){
                          'id': player.id
                          }));*/
                         /*$('<img/>', {
-                            'id': player.id,
-                            'class': 'char-icon',
-                            'src': src
-                        }).appendTo('#night #players');*/
-                        if (!clickDay) {
+                         'id': player.id,
+                         'class': 'char-icon',
+                         'src': src
+                         }).appendTo('#night #players');*/
+                        if (!clickNight) {
                             console.log("in click day");
                             $(document).on("click", "#night div#" + player.id, function () {
                                 if ($("input[name='role']").val() != "villager") {
@@ -378,7 +358,7 @@ $(document).ready(function(){
                         }
 
                     }
-                    clickDay = 1;
+                    Night = 1;
                     //click = click + 1;
                     /*if (endTime - gmt > 0) {
                      
