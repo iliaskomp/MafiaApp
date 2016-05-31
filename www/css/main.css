@@ -176,20 +176,19 @@
 }
 
 #day {
-    background-image: url("../img/day.png");
+    background-image: url("../img/daySmall2.png");
     background-size:100%;
+    background-repeat: none;
 }
 #night {
-    background:#333;
-    background-image: url("../img/night2.jpg");
+    background-image: url("../img/nightBlurSmall.png");
     background-size:100%;
-
+    background-repeat: none;
 }
 #night h4, #night p {
     color:white;
     text-shadow: none;
 }
-
 
 #other-char {
 }
@@ -258,7 +257,7 @@ hr {
     max-width: 500px;
 }
 
-.clickable-div 
+.clickable-div
     {
          cursor: pointer;
     }

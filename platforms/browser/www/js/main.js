@@ -1,26 +1,5 @@
-// Disable Back button
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    document.addEventListener("backbutton", function (e) {
-        e.preventDefault();
-    }, false );
-
-    showAndhideRole();
-}
-// Show and hide your role icon
-function showAndhideRole(){
-    // Show/Hide player icon when tapping
-   $(".hidden-icon").on('click',function(){
-       $('.hidden-icon').addClass('hide');
-       $('.reveal-icon').removeClass('hide');
-   });
-   $(".reveal-icon").on('click',function(){
-       $('.reveal-icon').addClass('hide');
-       $('.hidden-icon').removeClass('hide');
-   });
-}
-
-$(document).ready(function(){
+$(document).ready(function () {
+    console.log("document ready");
     var waiting = 0;
     var waitingPlayers;
     var checkStatus;
@@ -38,6 +17,7 @@ $(document).ready(function(){
 
     $('#createGame #start').click(function () {
         //CREATE GAME
+        console.log("clicked start game");
         var data = {};
         var bool = 0;
         data["Function"] = "createRoom";
@@ -134,7 +114,7 @@ $(document).ready(function(){
      data["roomId"] = "97";//$("input[name='roomId']").val();
      doRequest(data);
      });
-     
+
      $('#info #bla').click(function () {
      var data = {};
      var bool = 0;
@@ -192,7 +172,7 @@ $(document).ready(function(){
             data["target"] = target;
             doRequest(data);
         }
-    
+
 
     });
     $(document).on("click", ".tableElement", function () {
@@ -201,7 +181,7 @@ $(document).ready(function(){
         $("input[name='roomId']").val(id);
     });
 
-    $('#homepage #joinGame').click(function () {
+    $('#homepage #joinGameButton').click(function () {
         //CREATE GAME LIST
         var data = {};
         var bool = 0;
@@ -214,7 +194,9 @@ $(document).ready(function(){
             }
         }
         if (!bool) {
+
             doRequest(data);
+
         } else {
             //TODO show error message
         }
@@ -348,14 +330,14 @@ $(document).ready(function(){
                          }).appendTo('#night #players');
                          }*/
                         $('<div/>', {
-                         'id': player.id
-                         }).append($('<img/>', {
-                         'id': player.id,
-                         'class': 'char-icon',
-                         'src': src,
-                         'css' : 'z-index:100'
-                         })).appendTo('#night #players');// + Math.floor(i / 3)
-                         /*$('#night div#' + player.id).append($('<p/>', {
+                            'id': player.id
+                        }).append($('<img/>', {
+                            'id': player.id,
+                            'class': 'char-icon clickable-div',
+                            'src': src,
+                            'css': 'z-index:100'
+                        })).appendTo('#night #players');// + Math.floor(i / 3)
+                        /*$('#night div#' + player.id).append($('<p/>', {
                          'text': player.name
                          }));
                          $('#night div#' + player.id).append($('<p/>', {
@@ -363,11 +345,11 @@ $(document).ready(function(){
                          'id': player.id
                          }));*/
                         /*$('<img/>', {
-                            'id': player.id,
-                            'class': 'char-icon',
-                            'src': src
-                        }).appendTo('#night #players');*/
-                        if (!clickDay) {
+                         'id': player.id,
+                         'class': 'char-icon',
+                         'src': src
+                         }).appendTo('#night #players');*/
+                        if (!clickNight) {
                             console.log("in click day");
                             $(document).on("click", "#night div#" + player.id, function () {
                                 if ($("input[name='role']").val() != "villager") {
@@ -378,10 +360,10 @@ $(document).ready(function(){
                         }
 
                     }
-                    clickDay = 1;
+                    Night = 1;
                     //click = click + 1;
                     /*if (endTime - gmt > 0) {
-                     
+
                      jQuery(function ($) {
                      var diference = endTime - gmt;
                      display = $('#night #time');
@@ -595,4 +577,28 @@ $(document).ready(function(){
         clearInterval(checkStatus);
     }
 
+    showAndhideRole();
+
 });
+
+// Disable Back button
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );
+
+
+}
+
+// Show and hide your role icon
+function showAndhideRole(){
+   $(".hidden-icon").on('click',function(){
+       $('.hidden-icon').addClass('hide');
+       $('.char-icon-main').removeClass('hide');
+   });
+   $(".char-icon-main").on('click',function(){
+       $('.char-icon-main').addClass('hide');
+       $('.hidden-icon').removeClass('hide');
+   });
+}

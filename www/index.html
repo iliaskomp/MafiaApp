@@ -43,7 +43,7 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
     <!--Index CSS-->
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
-    <title>Title</title>
+    <title>Mafia</title>
     </head>
 <body>
     <input type="hidden" name="playerId" value="">
@@ -64,7 +64,7 @@
 
             <div class="home-buttons">
                 <a class="ui-btn" href="#createGame" role="button" data-transition="slide">Create Game</a>
-                <a class="ui-btn ui-btn" href="#joinGame" role="button" data-transition="slide">Join Game</a>
+                <a class="ui-btn ui-btn" id="joinGameButton" href="#joinGame" role="button" data-transition="slide">Join Game</a>
             </div>
         </div>
     </div>
@@ -167,7 +167,7 @@
         </div>
 
         <div role="main" class="ui-content">
-            <h3 class="general"> <span id="players-waiting"></span> players waiting...</h3>
+            <h3 class="general"> <span id="players-waiting"></span> Players waiting...</h3>
             <div id="players"></div>
 
 
@@ -234,8 +234,9 @@
             <!-- <button id="test">test</button> -->
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
-                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
-            </div>-->
+                <img class="char-icon-main hide" src="img/head-icon64.png" alt="Player Character">
+                <img class="hidden-icon" src="img/hidden-icon64.png" alt="Player Character">
+            </div>
 
             <hr>
             <div id="players"></div>
@@ -292,8 +293,9 @@
             <!-- <button id="test">test</button> -->
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
-                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
-            </div>-->
+                <img class="char-icon-main hide" src="img/head-icon64.png" alt="Player Character">
+                <img class="hidden-icon" src="img/hidden-icon64.png" alt="Player Character">
+            </div>
 
             <hr>
             <div id="players"></div>
@@ -371,8 +373,7 @@
                 <p>The winner is: </p>
                 <h1>Citizens!</h1><br>
                 <p>You won! :)</p><br>
-                <img src="img/win3.jpg" alt="" class="center img img-circle"><br><br>
-
+                <img src="img/winSmall.jpg" alt="" class="center img img-circle"><br><br>
             </div> -->
 
             <div class="center">
@@ -380,12 +381,12 @@
             </div>
         </div>
     </div>
-    
+
     <!--Cordova-->
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script src="./js/main.js"/>
     <!--Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    
+
 </body>
 </html>

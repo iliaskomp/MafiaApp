@@ -4,11 +4,26 @@
 * {
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+/* General Background */
+#homepage, #createGame, #joinGame, #waiting, #pregame, #enterGame, #info, #endGame {
+    background-image: url("../img/cork-wallet.png");
+    background-repeat: repeat;
+}
+
  .ui-page { -webkit-backface-visibility: hidden; }
 /*body {
     padding: 100px 100px 100px 100px;
     margin: 100px 100px 100px 100px;
 }*/
+.ui-header {
+    border:none;
+}
+.ui-btn {
+    box-shadow: 0px 0px 3px #999;
+    background: #D3D3D3;
+}
+
 .hide {
     display:none;
 }
@@ -160,6 +175,20 @@
     text-align: center;
 }
 
+#day {
+    background-image: url("../img/daySmall2.png");
+    background-size:100%;
+    background-repeat: none;
+}
+#night {
+    background-image: url("../img/nightBlurSmall.png");
+    background-size:100%;
+    background-repeat: none;
+}
+#night h4, #night p {
+    color:white;
+    text-shadow: none;
+}
 
 #other-char {
 }
@@ -211,3 +240,26 @@ hr {
     list-style:none;
     padding-left:0;
 }
+
+/* Error Modal */
+#errorModal .ui-header {
+    background: #B33D3D;
+    color: white;
+}
+#error-p {
+    margin: 1em !important;
+}
+
+/* End Game*/
+#endGame img {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+}
+
+.clickable-div
+    {
+         cursor: pointer;
+    }
+
+
