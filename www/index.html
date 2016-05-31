@@ -44,7 +44,8 @@
 <body>
     <input type="hidden" name="playerId" value="">
     <input type="hidden" name="roomId" value="">
-
+    <input type="hidden" name="status" value="">
+    <input type="hidden" name="previous" value="day">
     <!-- Homepage -->
     <div data-role="page" id="homepage">
 
@@ -174,7 +175,7 @@
             </div>
 
             <div class="two-buttons">
-                <a class="ui-btn general" href="#day" role="button" data-transition="slide">Continue to game..</a>
+                <a id="gameScreen" class="ui-btn general" href="#" role="button" data-transition="slide">Game Screen</a>
             </div>
         </div>
     </div>
@@ -211,13 +212,14 @@
         </div>
 
         <div role="main" class="ui-content">
-
+            <button id="test">test</button>
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
                 <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
             </div>
 
             <hr>
+            <div id="players"></div>
 
             <div class="row player-icon-row center">
 
@@ -251,7 +253,7 @@
             </div>
 
             <div>
-                <p class="timer"><b>02:39</b></p>
+                <span id="time" class="timer"></span>
             </div>
 
             <div class="center">
@@ -268,53 +270,35 @@
         </div>
 
         <div role="main" class="ui-content">
-
+            <button id="test">test</button>
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
                 <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
             </div>
 
             <hr>
-
-            <div class="row player-icon-row center">
-                <div>
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <p>Player 1</p>
-                </div>
-                <div>
-                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
-                    <p>Player 2</p>
-                </div>
-                <div>
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <p>Player 3</p>
-                </div>
+            <div id="players"></div>
+            <!--<div class="row player-icon-row">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                <img class="char-icon dead-icon" src="img/head-icon64-red-dead.png" alt="Player Icon">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
             </div>
 
-            <div class="row player-icon-row center">
-                <div>
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <p>Player 4</p>
-                </div>
-                <div>
-                    <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
-                    <p>Player 5</p>
-                </div>
-                <div>
-                    <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
-                    <p>Player 6</p>
-                </div>
-            </div>
+            <div class="row player-icon-row">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+                <img class="char-icon mafia-select-icon" src="img/head-icon64-green.png" alt="Player Icon">
+                <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
+            </div>-->
 
             <div>
-                <p class="timer"><b>02:39</b></p>
+                <span id="time" class="timer"></span>
             </div>
 
             <div id="kill-div" class="center">
                 <p>Tap an icon to kill, then confirm OK</p>
                             OR
                 <p>Press OK to continue</p>
-                <a id="ok-kill" class="ui-btn ui-btn-b general" href="#info" role="button" data-transition="slide">OK</a>
+                <a id="ok-kill" class="ui-btn ui-btn-b general" href="#" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>

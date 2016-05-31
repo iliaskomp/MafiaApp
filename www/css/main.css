@@ -165,17 +165,6 @@
 }
 .player-icon-row {
     text-align: center;
-    margin:0 auto;
-}
-.player-icon-row div {
-    display: inline-block;
-}
-.player-icon-row div img {
-    float:none;
-}
-.player-icon-row div p {
-    float:none;
-    display:block;
 }
 hr {
     width:80%;
@@ -184,7 +173,7 @@ hr {
     margin-bottom:12px;
 }
 .char-icon {
-    padding: 0.2em;
+    padding: 0.4em;
 }
 .timer {
     margin-top:1em;
