@@ -34,7 +34,7 @@
 .center {
     margin:0 auto;
     width:80%;
-    text-align: center
+    text-align: center;
 }
 .form-general  {
     margin: 0 auto;
@@ -77,6 +77,7 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 50px;
+    max-width: 200px;
 }
 
 /*Altering Jquery Mobile defaults */
