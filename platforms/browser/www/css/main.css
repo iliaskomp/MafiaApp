@@ -151,16 +151,6 @@
 }
 
 /* Day/Night Page*/
-#day {
-    background: #D9F0EB;
-}
-#night {
-    background:#333;
-}
-#night h4, #night p {
-    color:white;
-    text-shadow: none;
-}
 #player-char {
     text-align: center;
     margin-bottom:1em;
@@ -209,20 +199,4 @@ hr {
 #info ul {
     list-style:none;
     padding-left:0;
-}
-
-/* Error Modal */
-#errorModal .ui-header {
-    background: #B33D3D;
-    color: white;
-}
-#error-p {
-    margin: 1em !important;
-}
-
-/* End Game*/
-#endGame img {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 500px;
 }
