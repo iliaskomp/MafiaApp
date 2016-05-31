@@ -1,3 +1,25 @@
+// Disable Back button
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );
+
+    showAndhideRole();
+}
+// Show and hide your role icon
+function showAndhideRole(){
+    // Show/Hide player icon when tapping
+   $(".hidden-icon").on('click',function(){
+       $('.hidden-icon').addClass('hide');
+       $('.reveal-icon').removeClass('hide');
+   });
+   $(".reveal-icon").on('click',function(){
+       $('.reveal-icon').addClass('hide');
+       $('.hidden-icon').removeClass('hide');
+   });
+}
+
 $(document).ready(function(){
     var waiting = 0;
     var waitingPlayers;
@@ -24,12 +46,12 @@ $(document).ready(function(){
             }
         }
         if(!bool){
-           doRequest(data); 
+           doRequest(data);
         }else{
             //TODO show error message
         }
-        
-    });   
+
+    });
     $('#enterGame #join').click(function () {
         console.log("test");
         var data = {};
@@ -47,12 +69,12 @@ $(document).ready(function(){
             }
         }
         if(!bool){
-           doRequest(data); 
+           doRequest(data);
         }else{
             //TODO show error message
         }
     });
-    
+
     $('#waiting #leave').click(function () {
         console.log("test");
         var data = {};
@@ -68,12 +90,12 @@ $(document).ready(function(){
             }
         }
         if(!bool){
-           doRequest(data); 
+           doRequest(data);
         }else{
             //TODO show error message
         }
     });
-    
+
     $('#waiting #start').click(function () {
         console.log("test");
         var data = {};
@@ -89,42 +111,42 @@ $(document).ready(function(){
             }
         }
         if(!bool){
-           doRequest(data); 
+           doRequest(data);
         }else{
             //TODO show error message
         }
     });
-    
+
     $('#waiting #leave').click(function () {
         stopWaiting();
-        
+
     });
-    
+
     $('#day #test').click(function () {
         var data = {};
         var bool = 0;
         data["Function"] = "getRoomPlayers";
         data["roomId"] = "88";//$("input[name='roomId']").val();
-        doRequest(data); 
+        doRequest(data);
     });
-    
+
     $('#night #test').click(function () {
         var data = {};
         var bool = 0;
         data["Function"] = "getRoomPlayers";
         data["roomId"] = "88";//$("input[name='roomId']").val();
-        doRequest(data); 
+        doRequest(data);
     });
-    
+
     $('#pregame #gameScreen').click(function () {
         var data = {};
         var bool = 0;
         data["Function"] = "getRoomPlayers";
         data["roomId"] = "88";//$("input[name='roomId']").val();
-        doRequest(data); 
+        doRequest(data);
     });
-    
-    
+
+
     $(document).on("click",".tableElement" , function(){
         var id = $(this).last().parent().prop('id');
         $("input[name='roomId']").val(id);
@@ -133,9 +155,9 @@ $(document).ready(function(){
 $('.TableElement').click(function () {
         console.log("in click");
         //var id = $(this).closest("li").attr("id");
-        
-    });  
-   
+
+    });
+
    $('#homepage #joinGame').click(function () {
         var data = {};
         var bool = 0;
@@ -148,21 +170,21 @@ $('.TableElement').click(function () {
             }
         }
         if(!bool){
-           doRequest(data); 
+           doRequest(data);
         }else{
             //TODO show error message
         }
-        
+
     });
-    
+
      $('#pregame #gameScreen').click(function () {
         var data = {};
         var bool = 0;
         data["Function"] = "getRoomPlayers";
         data["roomId"] = $("input[name='roomId']").val();
-           doRequest(data); 
+           doRequest(data);
     });
-   
+
    function doRequest(data){
     $.ajax({
             type:"GET",
@@ -186,7 +208,7 @@ $('.TableElement').click(function () {
                         data1["Function"] = "getWaiting";
                         data1["roomId"] = obj.roomId;
                         doRequest(data1);
-                    },10000);  
+                    },10000);
                 }else if(obj.MessageCode == 202){
                     //CREATING GAME LIST
                     $( "#joinGame #list" ).empty();
@@ -218,7 +240,7 @@ $('.TableElement').click(function () {
                         data1["Function"] = "getPlayer";
                         data1["playerId"] = $("input[name='playerId']").val();
                         doRequest(data1);
-                        window.location = "#pregame";   
+                        window.location = "#pregame";
                     }
                 }else if(obj.MessageCode == 204){
                     //JOIN GAME
@@ -229,22 +251,22 @@ $('.TableElement').click(function () {
                         data1["Function"] = "getWaiting";
                         data1["roomId"] = $("input[name='roomId']").val();
                         doRequest(data1);
-                    },10000);  
+                    },10000);
                 }else if(obj.MessageCode == 205){
                     //DELETE USER/GAME
                     if(obj.RoomDeleted == 1){
                         window.location = "#createGame";
                     }else{
-                        window.location = "#enterGame";  
+                        window.location = "#enterGame";
                     }
-                    
+
                 }else if(obj.MessageCode == 206){
                     //SET ROLES
-                    console.log("test");             
+                    console.log("test");
                 }else if(obj.MessageCode == 207){
                     $( "p#role" ).html(obj.Data[0].role);
                 }else if(obj.MessageCode == 208){
-                    
+
                     var endTime = obj.EndTime;
                     var gmt = new Date(Date.now());
                     //var tz = gmt.getTimezoneOffset();
@@ -269,7 +291,7 @@ $('.TableElement').click(function () {
                         }).appendTo('#night #players #'+Math.floor(i/3));
                     }
                     if(endTime-gmt > 0){
-                      
+
                     jQuery(function ($) {
                         var diference = endTime - gmt;
                         display = $('#night #time');
@@ -295,19 +317,19 @@ $('.TableElement').click(function () {
                         }).appendTo('#day #players #'+Math.floor(i/3));
                     }
                     if(endTime-gmt > 0){
-                      
+
                     jQuery(function ($) {
                         var diference = endTime - gmt;
                         display = $('#day #time');
                         startTimer(diference, display);
                     });
                     }
-                    }                  
-                    
-                    
-                    
+                    }
+
+
+
                 }
-                
+
                 else{
                     //TODO ERROR 504
                 }
