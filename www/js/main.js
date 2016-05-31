@@ -1,4 +1,27 @@
-$(document).ready(function () {
+// Disable Back button
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );
+
+    showAndhideRole();
+}
+// Show and hide your role icon
+function showAndhideRole(){
+    // Show/Hide player icon when tapping
+   $(".hidden-icon").on('click',function(){
+       $('.hidden-icon').addClass('hide');
+       $('.reveal-icon').removeClass('hide');
+   });
+   $(".reveal-icon").on('click',function(){
+       $('.reveal-icon').addClass('hide');
+       $('.hidden-icon').removeClass('hide');
+   });
+}
+
+$(document).ready(function(){
+    var waiting = 0;
     var waitingPlayers;
     var checkStatus;
     var click = 0;
