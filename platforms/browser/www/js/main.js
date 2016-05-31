@@ -1,10 +1,37 @@
-$(document).ready(function () {
+// Disable Back button
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );
+
+    showAndhideRole();
+}
+// Show and hide your role icon
+function showAndhideRole(){
+    // Show/Hide player icon when tapping
+   $(".hidden-icon").on('click',function(){
+       $('.hidden-icon').addClass('hide');
+       $('.reveal-icon').removeClass('hide');
+   });
+   $(".reveal-icon").on('click',function(){
+       $('.reveal-icon').addClass('hide');
+       $('.hidden-icon').removeClass('hide');
+   });
+}
+
+$(document).ready(function(){
+    var waiting = 0;
     var waitingPlayers;
     var checkStatus;
     var click = 0;
     var target;
     var discovered = [];
     var discoveredRole = [];
+    var generatedDay = 0;
+    var generatedNight = 0;
+    var clickDay = 0;
+    var clickNight = 0;
     $("input[name='playerId']").val();
     $("input[name='roomId']").val();
     $("input[name='previous']").val("day");
@@ -125,6 +152,8 @@ $(document).ready(function () {
 
     $('#night #ok-kill').click(function () {
         var data = {};
+        //test = test + 1;
+        //$("#testppp").html(test);
         if ($("input[name='role']").val() == "villager" && $("input[name='previous']").val() == "night") {
             console.log("in villager");
             data["Function"] = "updatePlayerReady";
@@ -147,23 +176,23 @@ $(document).ready(function () {
 
     $('#day #continue').click(function () {
         var data = {};
-        if ($("input[name='role']").val() == "villager" && $("input[name='previous']").val() == "night") {
-            console.log("in villager");
+        /*if ($("input[name='role']").val() == "villager" && $("input[name='previous']").val() == "night") {
+         console.log("in villager");
+         data["Function"] = "updatePlayerReady";
+         data["playerId"] = $("input[name='playerId']").val();
+         doRequest(data);
+         } else {*/
+        if (target != null) {
             data["Function"] = "updatePlayerReady";
             data["playerId"] = $("input[name='playerId']").val();
             doRequest(data);
-        } else {
-            if (target != null) {
-                data["Function"] = "updatePlayerReady";
-                data["playerId"] = $("input[name='playerId']").val();
-                doRequest(data);
-                data = {};
-                data["Function"] = "updatePlayerTarget";
-                data["playerId"] = $("input[name='playerId']").val();
-                data["target"] = target;
-                doRequest(data);
-            }
+            data = {};
+            data["Function"] = "updatePlayerTarget";
+            data["playerId"] = $("input[name='playerId']").val();
+            data["target"] = target;
+            doRequest(data);
         }
+    
 
     });
     $(document).on("click", ".tableElement", function () {
@@ -297,11 +326,11 @@ $(document).ready(function () {
                 }
             } else if (obj.MessageCode == 208) {
                 //RESPONSE TO POPULATE THE GAME SCREENS
-                var endTime = obj.EndTime;
-                var gmt = new Date(Date.now());
+                //var endTime = obj.EndTime;
+                //var gmt = new Date(Date.now());
                 //var tz = gmt.getTimezoneOffset();
                 //gmt = new Date(gmt.valueOf() + gmt.getTimezoneOffset() * 60 * 1000);
-                gmt = Math.floor(gmt.valueOf() / 1000);
+                //gmt = Math.floor(gmt.valueOf() / 1000);
                 if ($("input[name='previous']").val() == "day") {
                     window.location = "#night";
                     $("input[name='previous']").val('night');
@@ -312,44 +341,53 @@ $(document).ready(function () {
                         if (player.status == 0) {
                             src = "img/head-icon64-red-dead.png";
                         }
-                        if (i % 3 == 0) {
-                            $('<div/>', {
-                                'id': i / 3,
-                                'class': 'row player-icon-row'
-                            }).appendTo('#night #players');
-                        }
+                        /*if (i % 3 == 0) {
+                         $('<div/>', {
+                         'id': i / 3,
+                         'class': 'row player-icon-row'
+                         }).appendTo('#night #players');
+                         }*/
                         $('<div/>', {
-                            'id': player.id
-                        }).append($('<img/>', {
+                         'id': player.id
+                         }).append($('<img/>', {
+                         'id': player.id,
+                         'class': 'char-icon',
+                         'src': src,
+                         'css' : 'z-index:100'
+                         })).appendTo('#night #players');// + Math.floor(i / 3)
+                         /*$('#night div#' + player.id).append($('<p/>', {
+                         'text': player.name
+                         }));
+                         $('#night div#' + player.id).append($('<p/>', {
+                         'text': "",
+                         'id': player.id
+                         }));*/
+                        /*$('<img/>', {
                             'id': player.id,
                             'class': 'char-icon',
                             'src': src
-                        })).appendTo('#night #players #' + Math.floor(i / 3));
-                        $('#night div#' + player.id).append($('<p/>', {
-                            'text': player.name
-                        }));
-                        $('#night div#' + player.id).append($('<p/>', {
-                            'text': "",
-                            'id': player.id
-                        }));
-                        if (click < 2) {
-                            $(document).on("click", "#night img#" + player.id, function () {
+                        }).appendTo('#night #players');*/
+                        if (!clickDay) {
+                            console.log("in click day");
+                            $(document).on("click", "#night div#" + player.id, function () {
                                 if ($("input[name='role']").val() != "villager") {
                                     target = $(this).parent().attr("id");
+                                    console.log(target);
                                 }
                             });
                         }
 
                     }
-                    click = click + 1;
-                    if (endTime - gmt > 0) {
-
-                        jQuery(function ($) {
-                            var diference = endTime - gmt;
-                            display = $('#night #time');
-                            startTimer(diference, display);
-                        });
-                    }
+                    clickDay = 1;
+                    //click = click + 1;
+                    /*if (endTime - gmt > 0) {
+                     
+                     jQuery(function ($) {
+                     var diference = endTime - gmt;
+                     display = $('#night #time');
+                     startTimer(diference, display);
+                     });
+                     }*/
                 } else {
                     window.location = "#day";
                     $("input[name='previous']").val('day');
@@ -478,35 +516,35 @@ $(document).ready(function () {
                         $("#killedIcon").attr("src", "img/head-icon64-green.png");
                     }
                     $('#votesHide').addClass('hide');
-                    if(obj.Discovered != 0){
+                    if (obj.Discovered != 0) {
                         discovered.push(obj.Discovered);
-                        discoveredRole.push(obj.DiscoveredRole);  
-                    }         
+                        discoveredRole.push(obj.DiscoveredRole);
+                    }
                 } else {
                     $("#info #killed").html();
                     $("#info #killed").html(obj.Killed + " Has been lynched by the mob");
                     $("#killedIcon").attr("src", "img/head-icon64-red-gun.png");
                     $('#votesHide').removeClass('hide');
                     /*for (var i = 0; i < obj.Targets.length; i++) {
-                        var vote = obj.Targets[i];
-                        $('#votes').html();
-                        for (var prop in vote) {
-                            playerVoted = 0;
-                            playerVotedOn = "did not vote";
-                            for (var j = 0; j < obj.Players.length; j++) {
-                                objPlayer = obj.Players[j];
-                                if (prop == objPlayer.id) {
-                                    playerVoted = objPlayer.name;
-                                }
-                                if (vote[prop] == objPlayer.id) {
-                                    playerVotedOn = objPlayer.name;
-                                }
-                            }
-                            $('#votes').append($('<p/>', {
-                                'text': playerVoted + " -> " + playerVotedOn
-                            }));
-                        }
-                    }*/
+                     var vote = obj.Targets[i];
+                     $('#votes').html();
+                     for (var prop in vote) {
+                     playerVoted = 0;
+                     playerVotedOn = "did not vote";
+                     for (var j = 0; j < obj.Players.length; j++) {
+                     objPlayer = obj.Players[j];
+                     if (prop == objPlayer.id) {
+                     playerVoted = objPlayer.name;
+                     }
+                     if (vote[prop] == objPlayer.id) {
+                     playerVotedOn = objPlayer.name;
+                     }
+                     }
+                     $('#votes').append($('<p/>', {
+                     'text': playerVoted + " -> " + playerVotedOn
+                     }));
+                     }
+                     }*/
                 }
                 for (i = 0; i < discovered.length; i++) {
                     console.log(discovered[i]);

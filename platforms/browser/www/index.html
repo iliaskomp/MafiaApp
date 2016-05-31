@@ -25,7 +25,6 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
@@ -36,8 +35,14 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- Jquery Mobile Theme -->
+    <!-- <link rel="stylesheet" href="css/mafia-custom.css"> -->
+    <link rel="stylesheet" href="css/mafia-custom.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.mobile.icons.min.css" />
+    <script src="js/"></script>
     <!--General CSS-->
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
+
     <!--Index CSS-->
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <title>Title</title>
@@ -48,6 +53,7 @@
     <input type="hidden" name="status" value="">
     <input type="hidden" name="role" value="">
     <input type="hidden" name="previous" value="day">
+
     <!-- Homepage -->
     <div data-role="page" id="homepage">
 
@@ -60,7 +66,7 @@
 
             <div class="home-buttons">
                 <a class="ui-btn" href="#createGame" role="button" data-transition="slide">Create Game</a>
-                <a id="joinGame"  class="ui-btn ui-btn-b" href="#joinGame" role="button" data-transition="slide">Join Game</a>
+                <a class="ui-btn ui-btn" href="#joinGame" role="button" data-transition="slide">Join Game</a>
             </div>
         </div>
     </div>
@@ -95,6 +101,19 @@
         </div>
     </div>
 
+    <!-- Error Modal -->
+    <div data-role="page" id="errorModal" data-dialog="true" data-close-btn="none">
+
+        <div data-role="header">
+            <h1>Error</h1>
+        </div>
+
+        <div role="main" class="ui-content" id="settings">
+            <p id="error-p">You have error...</p>
+            <a class="ui-btn general" href="#" role="button" data-transition="slide">OK</a>
+        </div>
+    </div>
+
     <!-- Settings Dialog Page -->
     <div data-role="page" id="settings" data-dialog="true">
 
@@ -117,7 +136,7 @@
                 <input type="range" name="slider-4" id="time" value="5" min="1" max="200">
             </div>
 
-            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">OK</a>
+            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">Start Game</a>
         </div>
     </div>
 
@@ -214,8 +233,8 @@
         </div>
 
         <div role="main" class="ui-content">
-            <button id="test">test</button>
-            <!--<div id="player-char" class="row">
+            <!-- <button id="test">test</button> -->
+            <div id="player-char" class="row">
                 <h4>Your Character</h4>
                 <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
             </div>-->
@@ -259,7 +278,7 @@
             </div>
 
             <div class="center">
-                <a id="continue" class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">Continue</a>
+                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
@@ -272,8 +291,8 @@
         </div>
 
         <div role="main" class="ui-content">
-            <button id="test">test</button>
-            <!--<div id="player-char" class="row">
+            <!-- <button id="test">test</button> -->
+            <div id="player-char" class="row">
                 <h4>Your Character</h4>
                 <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
             </div>-->
@@ -297,10 +316,9 @@
             </div>
 
             <div id="kill-div" class="center">
-                <p>Tap an icon to kill, then confirm OK</p>
-                            OR
-                <p>Press OK to continue</p>
-                <a id="ok-kill" class="ui-btn ui-btn-b general" href="#" role="button" data-transition="slide">OK</a>
+                <p> Roles: Tap an icon to kill, then confirm OK</p>
+                <p> Citizens: Press OK to continue</p>
+                <a id="ok-kill" class="ui-btn ui-btn-a general" href="#" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
@@ -331,28 +349,44 @@
             </div>
 
             <div class="center">
-                <a id="info_OK" class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">OK</a>
+                <a id="info_OK" class="ui-btn ui-btn general" href="#" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
 
-    <!-- Will move to js file soon -->
-    <script>
-       $(".hidden-icon").on('click',function(){
-           $('.hidden-icon').addClass('hide');
-           $('.reveal-icon').removeClass('hide');
-       });
-       $(".reveal-icon").on('click',function(){
-           $('.reveal-icon').addClass('hide');
-           $('.hidden-icon').removeClass('hide');
-       });
-    </script>
+    <!-- End Page -->
+    <div data-role="page" id="endGame">
 
-    <script src="js/main.js"/>
+        <div data-role="header">
+            <h1>End of Game</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div class="center">
+                <p>The winner is: </p>
+                <h1>Mafia!</h1><br>
+                <p>You lost :(</p><br>
+                <img src="img/loss.png" alt="" class="center img img-circle"><br><br>
+            </div>
+
+          <!--   <div class="center">
+                <p>The winner is: </p>
+                <h1>Citizens!</h1><br>
+                <p>You won! :)</p><br>
+                <img src="img/win3.jpg" alt="" class="center img img-circle"><br><br>
+
+            </div> -->
+
+            <div class="center">
+                <a class="ui-btn ui-btn general" href="#" role="button" data-transition="slide">OK</a>
+            </div>
+        </div>
+    </div>
+
     <!--Cordova-->
-    <script type="text/javascript" src="cordova.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <!--Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+    <script src="js/main.js"/>
 </body>
 </html>
