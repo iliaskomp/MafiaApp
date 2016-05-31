@@ -4,6 +4,13 @@
 * {
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+/* General Background */
+#homepage, #createGame, #joinGame, #waiting, #pregame, #enterGame, #info, #endGame {
+    background-image: url("../img/cork-wallet.png");
+    background-repeat: repeat;
+}
+
  .ui-page { -webkit-backface-visibility: hidden; }
 /*body {
     padding: 100px 100px 100px 100px;
@@ -12,6 +19,11 @@
 .ui-header {
     border:none;
 }
+.ui-btn {
+    box-shadow: 1px 1px 6px #999;
+    background: #D3D3D3;
+}
+
 .hide {
     display:none;
 }
@@ -234,3 +246,5 @@ hr {
     width: 90%;
     max-width: 500px;
 }
+
+
