@@ -18,6 +18,8 @@
 }*/
 .ui-header {
     border:none;
+    padding-top:20px;
+    padding-bottom:10px;
 }
 .ui-btn {
     box-shadow: 0px 0px 3px #999;
@@ -34,7 +36,7 @@
 .center {
     margin:0 auto;
     width:80%;
-    text-align: center
+    text-align: center;
 }
 .form-general  {
     margin: 0 auto;
@@ -76,8 +78,11 @@
 #pistol {
     display: block;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-top:70px;
+    margin-bottom: 70px;
+    max-width: 300px;
 }
+
 
 /*Altering Jquery Mobile defaults */
 .ui-page-theme-a a {
@@ -112,7 +117,12 @@
 .input-form {
     width: 80px;
 }
-
+#back-createGame {
+    margin-top: 0;
+}
+#start {
+    margin-bottom: 0;
+}
 #settings-icon {
     margin:0 auto;
     width:100%;
@@ -176,21 +186,22 @@
 }
 
 #day {
-    //background-image: url("../img/day.png");
-    background-size:100%;
+    background-image: url("../img/daySmall2.png");
+    background-size:cover;
+    background-repeat: none;
 }
 #night {
-    background:#333;
-    //background-image: url("../img/night2.jpg");
-    background-size:100%;
-
+    background-image: url("../img/nightBlurSmall.png");
+    background-size:cover;
+    background-repeat: none;
 }
 #night h4, #night p {
     color:white;
     text-shadow: none;
 }
-
-
+.btn-voted {
+    color: #C5B5B5 !important;
+}
 #other-char {
 }
 .player-icon-row {
@@ -226,15 +237,21 @@ hr {
     display: inline;
 }
 /*Night*/
-#kill-div p:first-child {
+/*#kill-div p:first-child {
     margin-top:1.2em;
     margin-bottom:0;
 }
 #kill-div p:last-child {
 
     margin-bottom:1.0em;
+}*/
+#kill-div p {
+    font-size:0.9em;
+    font-style: italic;
 }
-
+#kill-div span{
+    font-weight: 700px;
+}
 /*Info page*/
 
 #info ul {
@@ -255,10 +272,10 @@ hr {
 #endGame img {
     margin: 0 auto;
     width: 90%;
-    max-width: 500px;
+    max-width: 250px;
 }
 
-.clickable-div 
+.clickable-div
     {
          cursor: pointer;
     }
