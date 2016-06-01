@@ -203,7 +203,9 @@ $(document).ready(function () {
             }
         }
         if (!bool) {
+
             doRequest(data);
+
         } else {
             //TODO show error message
         }
@@ -411,7 +413,7 @@ $(document).ready(function () {
                     clickNight = 1;
                     //click = click + 1;
                     /*if (endTime - gmt > 0) {
-                     
+
                      jQuery(function ($) {
                      var diference = endTime - gmt;
                      display = $('#night #time');
@@ -588,10 +590,10 @@ $(document).ready(function () {
                     $("#info #killed").html(obj.Killed + " Has been lynched by the mob");
                     $("#killedIcon").attr("src", "img/head-icon64-red-gun.png");
                     $('#votesHide').removeClass('hide');
+                    $('#votes').empty();
                     show = setTimeout(showButton, 10000);
                     for (var i = 0; i < obj.Targets.length; i++) {
-                        var vote = obj.Targets[i];
-                        $('#votes').empty();
+                        var vote = obj.Targets[i];     
                         for (var prop in vote) {
                             playerVoted = 0;
                             playerVotedOn = "did not vote";
@@ -693,4 +695,28 @@ $(document).ready(function () {
         clearInterval(checkStatus);
     }
 
+    showAndhideRole();
+
 });
+
+// Disable Back button
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );
+
+
+}
+
+// Show and hide your role icon
+function showAndhideRole(){
+   $(".hidden-icon").on('click',function(){
+       $('.hidden-icon').addClass('hide');
+       $('.char-icon-main').removeClass('hide');
+   });
+   $(".char-icon-main").on('click',function(){
+       $('.char-icon-main').addClass('hide');
+       $('.hidden-icon').removeClass('hide');
+   });
+}

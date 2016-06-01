@@ -1,0 +1,213 @@
+
+@import url(https://fonts.googleapis.com/css?family=Passion+One);
+
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+ .ui-page { -webkit-backface-visibility: hidden; }
+/*body {
+    padding: 100px 100px 100px 100px;
+    margin: 100px 100px 100px 100px;
+}*/
+.hide {
+    display:none;
+}
+.row {
+    margin:0;
+    padding:0;
+}
+.center {
+    margin:0 auto;
+    width:80%;
+    text-align: center
+}
+.form-general  {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width:80%;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    /*margin: 200px 0;*/
+    font-size: 64px;
+    font-family: 'Passion One';
+    margin-bottom: 10px;
+    color:black;
+
+}
+
+.general{
+    text-align: center;
+}
+
+.two-buttons {
+    margin: 0 auto;
+    width:80%;
+}
+
+.two-buttons a {
+    position:relative;
+    display:block;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+
+/*Homepage*/
+
+
+#pistol {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+/*Altering Jquery Mobile defaults */
+.ui-page-theme-a a {
+    color: white; !important
+}
+
+.ui-page-theme-a a:active {
+    color: white; !important
+}
+
+.ui-page-theme-a a:hover {
+    color: white; !important
+}
+
+
+.ui-page-theme-a a:visited {
+    color: white; !important
+}
+.home-buttons {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width:80%;
+
+}
+.home-buttons a {
+    position:relative;
+    display:block;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+/*Create Game*/
+.input-form {
+    width: 80px;
+}
+
+#settings-icon {
+    margin:0 auto;
+    width:100%;
+}
+
+#settings-icon img{
+
+    position:relative;
+    display:block;
+    width: 40px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#createGame .btn {
+    margin:0;
+}
+
+#createGame #master-name {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Settings page */
+
+#sliders {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Join Room */
+
+.room-list {
+    margin-bottom: 60px !important;
+
+}
+
+/* Pregame*/
+
+.role-image {
+    margin: 20px auto;
+    width: 100%;
+}
+
+.role-image img{
+    position:relative;
+    display:block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Day/Night Page*/
+#player-char {
+    text-align: center;
+    margin-bottom:1em;
+}
+
+#player-char h4{
+    text-align: center;
+}
+
+
+#other-char {
+}
+.player-icon-row {
+    text-align: center;
+    margin:0 auto;
+}
+.player-icon-row div {
+    display: inline-block;
+}
+.player-icon-row div img {
+    float:none;
+}
+.player-icon-row div p {
+    float:none;
+    display:block;
+}
+hr {
+    width:80%;
+    border-color:#999;
+    margin-top:12px;
+    margin-bottom:12px;
+}
+.char-icon {
+    padding: 0.2em;
+}
+.timer {
+    margin-top:1em;
+    text-align: center;
+    font-size: 1.3em;
+    color: #DA7B28;
+}
+.player-icon-row p {
+    display: inline;
+}
+/*Night*/
+#kill-div p:first-child {
+    margin-top:1.2em;
+    margin-bottom:0;
+}
+#kill-div p:last-child {
+
+    margin-bottom:1.0em;
+}
+
+/*Info page*/
+
+#info ul {
+    list-style:none;
+    padding-left:0;
+}

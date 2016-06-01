@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/elias/University/2nd Semester/Cross-Platform Development/MafiaApp/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f8d95e11550f77533e9d4074ad4c241eb45af787">
+        <dex dex="/home/elias/University/2nd Semester/Cross-Platform Development/MafiaApp/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_0978d83010bd1cabd4711f79e41b9457ebe68a53.jar" />
+    </item>
+
+</items>
