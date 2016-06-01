@@ -197,7 +197,9 @@
     color:white;
     text-shadow: none;
 }
-
+.btn-voted {
+    color: #C5B5B5 !important;
+}
 #other-char {
 }
 .player-icon-row {
@@ -262,7 +264,7 @@ hr {
 #endGame img {
     margin: 0 auto;
     width: 90%;
-    max-width: 500px;
+    max-width: 250px;
 }
 
 .clickable-div
