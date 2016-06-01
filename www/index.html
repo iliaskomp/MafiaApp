@@ -41,10 +41,9 @@
     <link rel="stylesheet" type="text/css" href="./css/jquery.mobile.icons.min.css" />
     <!--General CSS-->
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
-
     <!--Index CSS-->
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
-    <title>Title</title>
+    <title>Mafia</title>
     </head>
 <body>
     <input type="hidden" name="playerId" value="">
@@ -60,9 +59,9 @@
             <h1>Home</h1>
         </div>
         <div role="main" class="ui-content">
-            <h1 class="title">Mafia</h1>
-            <img id="pistol" class="blood" src="img/pistol.png" alt="Pistol" width="100px">
-
+<!--             <h1 class="title">Mafia</h1>
+            <img id="pistol" class="blood" src="img/pistol.png" alt="Pistol" width="100px"> -->
+            <img id="pistol" class="center" src="img/mafia-logo-black.png" alt="Mafia" width="200px">
             <div class="home-buttons">
                 <a class="ui-btn" href="#createGame" role="button" data-transition="slide">Create Game</a>
                 <a id="joinGameButton" class="ui-btn ui-btn" href="#joinGame" role="button" data-transition="slide">Join Game</a>
@@ -90,8 +89,8 @@
             </div>
 
             <div class="two-buttons">
-                <a id="start" class="ui-btn " href="#" role="button">Start Game</a><br>
-                <a class="ui-btn ui-btn-b" href="#homepage" data-rel="back" role="button">Back</a>
+                <a id="start" class="ui-btn " href="" role="button">Start Game</a><br>
+                <a id="back-createGame" class="ui-btn ui-btn-b" href="#homepage" role="button" data-transition="flip">Back</a>
             </div>
 
             <a id="settings-icon" href="#settings" role="button" data-transition="flip">
@@ -135,7 +134,7 @@
                 <input type="range" name="slider-4" id="time" value="5" min="1" max="200">
             </div>
 
-            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">Start Game</a>
+            <a class="ui-btn general" href="#createGame" role="button" data-transition="flip">OK</a>
         </div>
     </div>
 
@@ -168,7 +167,7 @@
         </div>
 
         <div role="main" class="ui-content">
-            <h3 class="general"> <span id="players-waiting"></span> players waiting...</h3>
+            <h3 class="general"> <span id="players-waiting"></span> Players waiting...</h3>
             <div id="players"></div>
 
 
@@ -235,7 +234,8 @@
             <!-- <button id="test">test</button> -->
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
-                <img id="playerRole" class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+                <img id="playerRole" class="char-icon-main hide" src="" alt="Player Character">
+                <img class="hidden-icon" src="img/hidden-icon64.png" alt="Player Character">
             </div>
 
             <hr>
@@ -293,7 +293,8 @@
             <!-- <button id="test">test</button> -->
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
-                <img id="playerRole1" class="char-icon-main" src="" alt="Player Character">
+                <img id="playerRole1" class="char-icon-main hide" src="" alt="Player Character">
+                <img class="hidden-icon" src="img/hidden-icon64.png" alt="Player Character">
             </div>
 
             <hr>
@@ -315,8 +316,10 @@
             </div>
 
             <div id="kill-div" class="center">
-                <p> Roles: Tap an icon to kill, then confirm OK</p>
-                <p> Citizens: Press OK to continue</p>
+                <p> <span>Villagers:</span> Press OK to continue.</p>
+                <p> <span>Mafia:</span> Select a player to kill and press OK.</p>
+                <p> <span>Detective:</span> Select a player to reveal his identity and press OK.</p>
+                <p> <span>Doctor: </span>Select a player to save if he is targeted by mafia and press OK.</p>
                 <a id="ok-kill" class="ui-btn ui-btn-a general" href="#" role="button" data-transition="slide">OK</a>
             </div>
         </div>
@@ -331,7 +334,7 @@
 
         <div role="main" class="ui-content">
 
-            <button id="bla">nalalalall</button>
+            
             <div class="center">
                 <p id="killed"></p>
                  <img id="killedIcon" class="char-icon gun-icon" src="" alt="Player Icon">
@@ -365,29 +368,30 @@
                 <p>The winner is: </p>
                 <h1 id="winner"></h1><br>
                 <p id="result"></p><br>
-                <a class="ui-btn ui-btn-b" href="#homepage" role="button">Homepage</a>
+                
                 <!--<img src="img/loss.png" alt="" class="center img img-circle"><br><br>-->
+                
+                <!-- <img src="img/mafia200.png" alt="" class="center img img-circle"><br><br> -->
+                <!--<img src="http://image005.flaticon.com/1/svg/42/42175.svg" alt="" class="center img img-circle"><br><br>-->
             </div>
 
           <!--   <div class="center">
                 <p>The winner is: </p>
                 <h1>Citizens!</h1><br>
                 <p>You won! :)</p><br>
-                <img src="img/win3.jpg" alt="" class="center img img-circle"><br><br>
-
             </div> -->
 
             <div class="center">
-                <a class="ui-btn ui-btn general" href="#" role="button" data-transition="slide">OK</a>
+                <a class="ui-btn ui-btn general" href="#homepage" role="button" data-transition="slide">Homepage</a>
             </div>
         </div>
     </div>
-    
+
     <!--Cordova-->
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script src="./js/main.js"/>
     <!--Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    
+
 </body>
 </html>
