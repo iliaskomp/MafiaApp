@@ -90,7 +90,7 @@
 
             <div class="two-buttons">
                 <a id="start" class="ui-btn " href="" role="button">Start Game</a><br>
-                <a id="back-createGame" class="ui-btn ui-btn-b" href="#homepage" data-rel="back" role="button">Back</a>
+                <a id="back-createGame" class="ui-btn ui-btn-b" href="#homepage" role="button" data-transition="flip">Back</a>
             </div>
 
             <a id="settings-icon" href="#settings" role="button" data-transition="flip">
@@ -134,7 +134,7 @@
                 <input type="range" name="slider-4" id="time" value="5" min="1" max="200">
             </div>
 
-            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">Start Game</a>
+            <a class="ui-btn general" href="#createGame" role="button" data-transition="flip">OK</a>
         </div>
     </div>
 
@@ -316,8 +316,10 @@
             </div>
 
             <div id="kill-div" class="center">
-                <p> Roles: Tap an icon to kill, then confirm OK</p>
-                <p> Citizens: Press OK to continue</p>
+                <p> <span>Villagers:</span> Press OK to continue.</p>
+                <p> <span>Mafia:</span> Select a player to kill and press OK.</p>
+                <p> <span>Detective:</span> Select a player to reveal his identity and press OK.</p>
+                <p> <span>Doctor: </span>Select a player to save if he is targeted by mafia and press OK.</p>
                 <a id="ok-kill" class="ui-btn ui-btn-a general" href="#" role="button" data-transition="slide">OK</a>
             </div>
         </div>
@@ -363,21 +365,23 @@
 
         <div role="main" class="ui-content">
             <div class="center">
-                <p>The winner is: </p>
-                <h1>Mafia!</h1><br>
-                <p>You lost :(</p><br>
-                <img src="img/loss.png" alt="" class="center img img-circle"><br><br>
+                <div>
+                    <p><span>Mafia</span>The winner is: </p>
+                    <h1>Mafia!</h1><br>
+                    <p>You lost :(</p><br>
+                </div>
+                <!-- <img src="img/mafia200.png" alt="" class="center img img-circle"><br><br> -->
+                <img src="http://image005.flaticon.com/1/svg/42/42175.svg" alt="" class="center img img-circle"><br><br>
             </div>
 
           <!--   <div class="center">
                 <p>The winner is: </p>
                 <h1>Citizens!</h1><br>
                 <p>You won! :)</p><br>
-                <img src="img/winSmall.jpg" alt="" class="center img img-circle"><br><br>
             </div> -->
 
             <div class="center">
-                <a class="ui-btn ui-btn general" href="#" role="button" data-transition="slide">OK</a>
+                <a class="ui-btn ui-btn general" href="#homepage" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
