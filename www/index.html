@@ -90,7 +90,7 @@
 
             <div class="two-buttons">
                 <a id="start" class="ui-btn " href="" role="button">Start Game</a><br>
-                <a id="back-createGame" class="ui-btn ui-btn-b" href="#homepage" data-rel="back" role="button">Back</a>
+                <a id="back-createGame" class="ui-btn ui-btn-b" href="#homepage" role="button" data-transition="flip">Back</a>
             </div>
 
             <a id="settings-icon" href="#settings" role="button" data-transition="flip">
@@ -316,8 +316,10 @@
             </div>
 
             <div id="kill-div" class="center">
-                <p> Roles: Tap an icon to kill, then confirm OK</p>
-                <p> Citizens: Press OK to continue</p>
+                <p> <span>Villagers:</span> Press OK to continue.</p>
+                <p> <span>Mafia:</span> Select a player to kill and press OK.</p>
+                <p> <span>Detective:</span> Select a player to reveal his identity and press OK.</p>
+                <p> <span>Doctor: </span>Select a player to save if he is targeted by mafia and press OK.</p>
                 <a id="ok-kill" class="ui-btn ui-btn-a general" href="#" role="button" data-transition="slide">OK</a>
             </div>
         </div>

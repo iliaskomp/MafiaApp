@@ -18,6 +18,7 @@
 }*/
 .ui-header {
     border:none;
+    /*padding-top:20px;*/
 }
 .ui-btn {
     box-shadow: 0px 0px 3px #999;
@@ -185,12 +186,12 @@
 
 #day {
     background-image: url("../img/daySmall2.png");
-    background-size:100%;
+    background-size:cover;
     background-repeat: none;
 }
 #night {
     background-image: url("../img/nightBlurSmall.png");
-    background-size:100%;
+    background-size:cover;
     background-repeat: none;
 }
 #night h4, #night p {
@@ -235,15 +236,21 @@ hr {
     display: inline;
 }
 /*Night*/
-#kill-div p:first-child {
+/*#kill-div p:first-child {
     margin-top:1.2em;
     margin-bottom:0;
 }
 #kill-div p:last-child {
 
     margin-bottom:1.0em;
+}*/
+#kill-div p {
+    font-size:0.9em;
+    font-style: italic;
 }
-
+#kill-div span{
+    font-weight: 700px;
+}
 /*Info page*/
 
 #info ul {
