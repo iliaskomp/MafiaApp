@@ -176,12 +176,12 @@
 }
 
 #day {
-    background-image: url("../img/day.png");
+    //background-image: url("../img/day.png");
     background-size:100%;
 }
 #night {
     background:#333;
-    background-image: url("../img/night2.jpg");
+    //background-image: url("../img/night2.jpg");
     background-size:100%;
 
 }
@@ -261,6 +261,10 @@ hr {
 .clickable-div 
     {
          cursor: pointer;
+    }
+    
+    .btn-voted{
+        color:#C5B5B5 !important;
     }
 
 

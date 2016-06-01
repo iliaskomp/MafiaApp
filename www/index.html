@@ -39,7 +39,6 @@
     <!-- <link rel="stylesheet" href="css/mafia-custom.css"> -->
     <link rel="stylesheet" href="css/mafia-custom.min.css">
     <link rel="stylesheet" type="text/css" href="./css/jquery.mobile.icons.min.css" />
-    <script src="js/"></script>
     <!--General CSS-->
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
 
@@ -66,7 +65,7 @@
 
             <div class="home-buttons">
                 <a class="ui-btn" href="#createGame" role="button" data-transition="slide">Create Game</a>
-                <a class="ui-btn ui-btn" href="#joinGame" role="button" data-transition="slide">Join Game</a>
+                <a id="joinGameButton" class="ui-btn ui-btn" href="#joinGame" role="button" data-transition="slide">Join Game</a>
             </div>
         </div>
     </div>
@@ -91,7 +90,7 @@
             </div>
 
             <div class="two-buttons">
-                <a id="start" class="ui-btn " href="" role="button">Start Game</a><br>
+                <a id="start" class="ui-btn " href="#" role="button">Start Game</a><br>
                 <a class="ui-btn ui-btn-b" href="#homepage" data-rel="back" role="button">Back</a>
             </div>
 
@@ -236,8 +235,8 @@
             <!-- <button id="test">test</button> -->
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
-                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
-            </div>-->
+                <img id="playerRole" class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
+            </div>
 
             <hr>
             <div id="players"></div>
@@ -278,7 +277,7 @@
             </div>
 
             <div class="center">
-                <a class="ui-btn ui-btn general" href="#day" role="button" data-transition="slide">OK</a>
+                <a id="continue" class="ui-btn ui-btn general" href="#" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
@@ -294,8 +293,8 @@
             <!-- <button id="test">test</button> -->
             <div id="player-char" class="row">
                 <h4>Your Character</h4>
-                <img class="char-icon-main" src="img/head-icon64.png" alt="Player Character">
-            </div>-->
+                <img id="playerRole1" class="char-icon-main" src="" alt="Player Character">
+            </div>
 
             <hr>
             <div id="players"></div>
@@ -349,7 +348,7 @@
             </div>
 
             <div class="center">
-                <a id="info_OK" class="ui-btn ui-btn general" href="#" role="button" data-transition="slide">OK</a>
+                <a id="info_OK" class="ui-btn ui-btn general hide" href="#" role="button" data-transition="slide">OK</a>
             </div>
         </div>
     </div>
@@ -364,9 +363,10 @@
         <div role="main" class="ui-content">
             <div class="center">
                 <p>The winner is: </p>
-                <h1>Mafia!</h1><br>
-                <p>You lost :(</p><br>
-                <img src="img/loss.png" alt="" class="center img img-circle"><br><br>
+                <h1 id="winner"></h1><br>
+                <p id="result"></p><br>
+                <a class="ui-btn ui-btn-b" href="#homepage" role="button">Homepage</a>
+                <!--<img src="img/loss.png" alt="" class="center img img-circle"><br><br>-->
             </div>
 
           <!--   <div class="center">
