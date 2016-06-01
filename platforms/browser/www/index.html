@@ -36,8 +36,14 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- Jquery Mobile Theme -->
+    <!-- <link rel="stylesheet" href="css/mafia-custom.css"> -->
+    <link rel="stylesheet" href="css/mafia-custom.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.mobile.icons.min.css" />
+    <script src="js/"></script>
     <!--General CSS-->
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
+
     <!--Index CSS-->
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <title>Title</title>
@@ -95,6 +101,19 @@
         </div>
     </div>
 
+    <!-- Error Modal -->
+    <div data-role="page" id="errorModal" data-dialog="true" data-close-btn="none">
+
+        <div data-role="header">
+            <h1>Error</h1>
+        </div>
+
+        <div role="main" class="ui-content" id="settings">
+            <p id="error-p">You have error...</p>
+            <a class="ui-btn general" href="#" role="button" data-transition="slide">OK</a>
+        </div>
+    </div>
+
     <!-- Settings Dialog Page -->
     <div data-role="page" id="settings" data-dialog="true">
 
@@ -117,7 +136,7 @@
                 <input type="range" name="slider-4" id="time" value="5" min="1" max="200">
             </div>
 
-            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">OK</a>
+            <a class="ui-btn general" href="#waiting" role="button" data-transition="slide">Start Game</a>
         </div>
     </div>
 
@@ -244,7 +263,7 @@
                     <img class="char-icon" src="img/head-icon64.png" alt="Player Icon">
                     <p>Player 4</p>
                 </div>
-                <div>
+                <div>a
                     <img class="char-icon dead" src="img/head-icon64-red-dead.png" alt="Player Icon">
                     <p>Player 5</p>
                 </div>
@@ -348,7 +367,32 @@
        });
     </script>
 
-    <script src="js/main.js"/>
+        <div data-role="header">
+            <h1>End of Game</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div class="center">
+                <p>The winner is: </p>
+                <h1>Mafia!</h1><br>
+                <p>You lost :(</p><br>
+                <img src="img/loss.png" alt="" class="center img img-circle"><br><br>
+            </div>
+
+          <!--   <div class="center">
+                <p>The winner is: </p>
+                <h1>Citizens!</h1><br>
+                <p>You won! :)</p><br>
+                <img src="img/win3.jpg" alt="" class="center img img-circle"><br><br>
+
+            </div> -->
+
+            <div class="center">
+                <a class="ui-btn ui-btn general" href="#" role="button" data-transition="slide">OK</a>
+            </div>
+        </div>
+    </div>
+
     <!--Cordova-->
     <script type="text/javascript" src="cordova.js"></script>
     <!--Bootstrap JS-->
