@@ -633,7 +633,7 @@ $(document).ready(function () {
                 } else if (obj.Game == 1) {
                     window.location = "#endGame";
                     $("#endGame #winner").html("Villagers");
-                    if ($("input[name='role']").val() != "Mafia") {
+                    if ($("input[name='role']").val() != "mafia") {
                         $("#endGame #result").html("You won!");
 
                     } else {
