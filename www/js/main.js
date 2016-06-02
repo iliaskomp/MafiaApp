@@ -635,6 +635,10 @@ $(document).ready(function () {
                     $("#endGame #winner").html("Villagers");
                     if($("input[name='role']").val() != "Mafia"){
                         $("#endGame #result").html("you won!");
+                        $('#endGame #image').append($('<img/>', {
+                                'src': "http://image005.flaticon.com/1/svg/42/42175.svg",
+                                'class': "center img img-circle"
+                            }));
                     }else{
                         $("#endGame #result").html("you lost!");
                     }
@@ -643,6 +647,10 @@ $(document).ready(function () {
                     $("#endGame #winner").html("Mafia won");
                     if($("input[name='role']").val() == "mafia"){
                         $("#endGame #result").html("you won!");
+                        $('#endGame #image').append($('<img/>', {
+                                'src': "img/mafia200.png",
+                                'class': "center img img-circle"
+                            }));
                     }else{
                         $("#endGame #result").html("you lost!");
                     }
