@@ -118,15 +118,15 @@ $(document).ready(function () {
      data["roomId"] = "97";//$("input[name='roomId']").val();
      doRequest(data);
      });*/
-     
-     $('#info #bla').click(function () {
-     /*var data = {};
-     var bool = 0;
-     data["Function"] = "playGame";
-     data["roomId"] = "98";//$("input[name='roomId']").val();
-     doRequest(data);*/
-         //show = setTimeout(showButton, 1000);
-     });
+
+    $('#info #bla').click(function () {
+        /*var data = {};
+         var bool = 0;
+         data["Function"] = "playGame";
+         data["roomId"] = "98";//$("input[name='roomId']").val();
+         doRequest(data);*/
+        //show = setTimeout(showButton, 1000);
+    });
 
     $('#info #info_OK').click(function () {
         var data = {};
@@ -337,19 +337,19 @@ $(document).ready(function () {
                     $("#night #players").empty();
                     //$("input[name='role']").val(obj.Data[0].role);
                     /*switch ($("input[name='role']").val()) {
-                        case "villager":
-                            $("#night #playerRole1").attr("src", "./img/citizin-icon64.png");
-                            break;
-                        case "mafia":
-                            $("#night #playerRole1").attr("src", "./img/mafia-icon64.png");
-                            break;
-                        case "doctor":
-                            $("#night #playerRole1").attr("src", "./img/doctor-icon64.png");
-                            break;
-                        case "detective":
-                            $("#night #playerRole1").attr("src", "./img/detective-icon64.png");
-                            break;
-                    }*/
+                     case "villager":
+                     $("#night #playerRole1").attr("src", "./img/citizin-icon64.png");
+                     break;
+                     case "mafia":
+                     $("#night #playerRole1").attr("src", "./img/mafia-icon64.png");
+                     break;
+                     case "doctor":
+                     $("#night #playerRole1").attr("src", "./img/doctor-icon64.png");
+                     break;
+                     case "detective":
+                     $("#night #playerRole1").attr("src", "./img/detective-icon64.png");
+                     break;
+                     }*/
                     for (var i = 0; i < obj.Data.length; i++) {
                         var player = obj.Data[i];
                         var src = "img/head-icon64.png";
@@ -413,7 +413,7 @@ $(document).ready(function () {
                     clickNight = 1;
                     //click = click + 1;
                     /*if (endTime - gmt > 0) {
-
+                     
                      jQuery(function ($) {
                      var diference = endTime - gmt;
                      display = $('#night #time');
@@ -425,19 +425,19 @@ $(document).ready(function () {
                     $("input[name='previous']").val('day');
                     $("#day #players").empty();
                     /*switch ($("input[name='role']").val()) {
-                        case "villager":
-                            $("#day #playerRole").attr("src", "./img/citizin-icon64.png");
-                            break;
-                        case "mafia":
-                            $("#day #playerRole").attr("src", "./img/mafia-icon64.png");
-                            break;
-                        case "doctor":
-                            $("#day #playerRole").attr("src", "./img/doctor-icon64.png");
-                            break;
-                        case "detective":
-                            $("#day #playerRole").attr("src", "./img/detective-icon64.png");
-                            break;
-                    }*/
+                     case "villager":
+                     $("#day #playerRole").attr("src", "./img/citizin-icon64.png");
+                     break;
+                     case "mafia":
+                     $("#day #playerRole").attr("src", "./img/mafia-icon64.png");
+                     break;
+                     case "doctor":
+                     $("#day #playerRole").attr("src", "./img/doctor-icon64.png");
+                     break;
+                     case "detective":
+                     $("#day #playerRole").attr("src", "./img/detective-icon64.png");
+                     break;
+                     }*/
                     for (var i = 0; i < obj.Data.length; i++) {
                         var player = obj.Data[i];
                         var src = "img/head-icon64.png";
@@ -472,25 +472,25 @@ $(document).ready(function () {
                                 target = $(this).parent().attr("id");
                                 $("#day #continue").removeClass("btn-voted");
                                 if (help == 0) {
-                                        previousTarget = target;
-                                        previousPhoto = $("#day img#" + target).attr("src");
-                                        $("#day img#" + target).attr("src", "./img/head-icon64-green.png");
-                                        console.log(previousTarget);
+                                    previousTarget = target;
+                                    previousPhoto = $("#day img#" + target).attr("src");
+                                    $("#day img#" + target).attr("src", "./img/head-icon64-green.png");
+                                    console.log(previousTarget);
 
-                                        console.log(previousPhoto);
-                                        help = 1;
-                                    } else {
-                                        previousPhoto1 = $("#day img#" + target).attr("src");
-                                        $("#day img#" + target).attr("src", "./img/head-icon64-green.png");
-                                        $("#day img#" + previousTarget).attr("src", previousPhoto);
-                                        previousTarget = target;
-                                        previousPhoto = previousPhoto1;
-                                        console.log(previousTarget);
+                                    console.log(previousPhoto);
+                                    help = 1;
+                                } else {
+                                    previousPhoto1 = $("#day img#" + target).attr("src");
+                                    $("#day img#" + target).attr("src", "./img/head-icon64-green.png");
+                                    $("#day img#" + previousTarget).attr("src", previousPhoto);
+                                    previousTarget = target;
+                                    previousPhoto = previousPhoto1;
+                                    console.log(previousTarget);
 
-                                        console.log(previousPhoto);
-                                        console.log("#day img#" + previousTarget);
+                                    console.log(previousPhoto);
+                                    console.log("#day img#" + previousTarget);
 
-                                    }
+                                }
                             });
 
                         }
@@ -580,7 +580,7 @@ $(document).ready(function () {
                     }
                     $('#votesHide').addClass('hide');
                     show = setTimeout(showButton, 10000);
-                    
+
                     if (obj.Discovered != 0) {
                         discovered.push(obj.Discovered);
                         discoveredRole.push(obj.DiscoveredRole);
@@ -593,7 +593,7 @@ $(document).ready(function () {
                     $('#votes').empty();
                     show = setTimeout(showButton, 10000);
                     for (var i = 0; i < obj.Targets.length; i++) {
-                        var vote = obj.Targets[i];     
+                        var vote = obj.Targets[i];
                         for (var prop in vote) {
                             playerVoted = 0;
                             playerVotedOn = "did not vote";
@@ -630,38 +630,40 @@ $(document).ready(function () {
                     $('#info_OK').addClass('hide');
                     $("#night #ok-kill").removeClass("btn-voted");
                     $("#day #continue").removeClass("btn-voted");
-                }else if(obj.Game == 1){
+                } else if (obj.Game == 1) {
                     window.location = "#endGame";
                     $("#endGame #winner").html("Villagers");
-                    if($("input[name='role']").val() != "Mafia"){
-                        $("#endGame #result").html("you won!");
-                        $('#endGame #image').append($('<img/>', {
-                                'src': "http://image005.flaticon.com/1/svg/42/42175.svg",
-                                'class': "center img img-circle"
-                            }));
-                    }else{
+                    if ($("input[name='role']").val() != "Mafia") {
+                        $("#endGame #result").html("You won!");
+
+                    } else {
                         $("#endGame #result").html("you lost!");
                     }
-                }else if(obj.Game == 2){
+                    $('#endGame #image').append($('<img/>', {
+                        'src': "http://image005.flaticon.com/1/svg/42/42175.svg",
+                        'class': "center img img-circle"
+                    }));
+                } else if (obj.Game == 2) {
                     window.location = "#endGame";
-                    $("#endGame #winner").html("Mafia won");
-                    if($("input[name='role']").val() == "mafia"){
-                        $("#endGame #result").html("you won!");
-                        $('#endGame #image').append($('<img/>', {
-                                'src': "img/mafia200.png",
-                                'class': "center img img-circle"
-                            }));
-                    }else{
-                        $("#endGame #result").html("you lost!");
+                    $("#endGame #winner").html("Mafia");
+                    if ($("input[name='role']").val() == "mafia") {
+                        $("#endGame #result").html("You won!");
+
+                    } else {
+                        $("#endGame #result").html("You lost!");
                     }
+                    $('#endGame #image').append($('<img/>', {
+                        'src': "img/mafia200.png",
+                        'class': "center img img-circle"
+                    }));
                 }
 
-            }else if(obj.MessageCode == 220){
+            } else if (obj.MessageCode == 220) {
                 var data = {};
-        data["Function"] = "checkGame";
-        data["roomId"] = $("input[name='roomId']").val();
-        doRequest(data);
-            }else {
+                data["Function"] = "checkGame";
+                data["roomId"] = $("input[name='roomId']").val();
+                doRequest(data);
+            } else {
                 //TODO ERROR 504
             }
         });
@@ -693,7 +695,7 @@ $(document).ready(function () {
     function stopWaiting() {
         clearInterval(waitingPlayers);
     }
-    
+
     function showButton() {
         $('#info_OK').removeClass('hide');
         clearInterval(show);
@@ -712,19 +714,19 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     document.addEventListener("backbutton", function (e) {
         e.preventDefault();
-    }, false );
+    }, false);
 
 
 }
 
 // Show and hide your role icon
-function showAndhideRole(){
-   $(".hidden-icon").on('click',function(){
-       $('.hidden-icon').addClass('hide');
-       $('.char-icon-main').removeClass('hide');
-   });
-   $(".char-icon-main").on('click',function(){
-       $('.char-icon-main').addClass('hide');
-       $('.hidden-icon').removeClass('hide');
-   });
+function showAndhideRole() {
+    $(".hidden-icon").on('click', function () {
+        $('.hidden-icon').addClass('hide');
+        $('.char-icon-main').removeClass('hide');
+    });
+    $(".char-icon-main").on('click', function () {
+        $('.char-icon-main').addClass('hide');
+        $('.hidden-icon').removeClass('hide');
+    });
 }
